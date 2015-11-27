@@ -1,0 +1,72 @@
+///*------------------------------------*\
+//    #TWITTER LIST
+//\*------------------------------------*/
+
+/* LIST CONTAINER
+========================================================================== */
+.twitter-list-container {
+	@include breakpoint(small) {
+		display: none;
+	}
+}
+
+/* LIST
+========================================================================== */
+.twitter-list {
+	ul {
+		display:inline-block;
+		@include rem(margin-bottom, 15px);
+	}
+
+	li {
+		overflow: hidden;
+		display: block;
+		vertical-align: top;
+		@include rem(margin-bottom, 30px); @include rem(padding-bottom, 25px);
+		border-bottom: 1px dashed $color-Dove-Gray;
+
+		&:last-child {
+			@include rem(margin-bottom, 10px);
+		}
+	}
+
+	.user {
+		display: inline-block;
+		margin-bottom: 5px;
+
+		[data-scribe="element:user_link"] {
+
+			&:hover, &:focus {
+				opacity: .7;
+			}
+
+		}
+
+		[data-scribe="element:avatar"] {
+			float: left;
+			margin-right: 6px;
+			width: 35px; height: 36px;
+		}
+
+		[data-scribe="element:name"] {
+			font-family: $font-special; @include rem(font-size, 14px); line-height: 120%; font-weight: 600; color: $color-White;
+		}
+
+		[data-scribe="element:screen_name"] {
+			display: inline-block;
+			width: 70%;
+			font-family: $font-Arial; @include rem(font-size, 12px); line-height: 120%; color: $color-Ochre;
+		}
+
+	}
+
+	.tweet {
+
+		@include rem(font-size, 14px); line-height: 125%; color: $color-White;
+		word-wrap: break-word;
+		a {
+			// color:$color-Cornflower;
+		}
+	}
+
+}

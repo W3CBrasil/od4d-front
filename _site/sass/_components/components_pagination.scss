@@ -1,0 +1,38 @@
+///*------------------------------------*\
+//    #PAGINATION
+//\*------------------------------------*/
+
+/* LIST
+========================================================================== */
+.pagination {
+	display: inline-block;
+	width: 100%;
+}
+
+/* ITENS
+========================================================================== */
+.pagination__item {
+	display: inline-block;
+	margin-right: 2px;
+	font-family: $font-special; @include rem(font-size, 12px); color: $color-Dove-Gray; font-weight: bold; text-transform: uppercase;
+
+	&.is-inactive {
+		border-color: $color-Dove-Gray;
+		&:hover, &:focus {
+			background-color: inherit;
+			border-color: inherit;
+			color: inherit;
+			cursor: default;
+		}
+	}
+
+	&.is-current {
+		background-color: $color-Cod-Gray;
+		color: $color-Gallery;
+	}
+
+}
+
+.pagination__anchor {
+	color: $color-Mine-Shaft;
+}

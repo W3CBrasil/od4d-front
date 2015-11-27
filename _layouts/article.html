@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body data-language="pt-br">
+	{% include navigation.html %}
+
+	{% if page.isNetwork == true %}
+		<main class="is-network-article" id="main" role="main">
+	{% else %}
+		<main id="main" role="main">
+	{% endif %}
+
+		{% if page.hasBio == true %}
+			<article class="article-wrapper">
+		{% else %}
+			<article class="article-wrapper article-wrapper--no-bio">
+		{% endif %}
+			{% include post/article-header.html %}
+			<div class="section section--1">
+				<div class="content article-content">
+					{% if page.isNetwork == false %}
+						{% include post/article-entry.html %}
+					{% else %}
+						{% include post/article-entry--network.html %}
+					{% endif %}
+					{% include post/semantic-list.html %}
+					{% include post/social-sharer.html %}
+				</div>
+			</div>
+		<footer class="article-related-content-wrapper">
+			<div class="content">
+				{% include post/article-related-content.html %}
+			</div>
+		</footer>
+		</article>
+	</main>
+	<footer class="section section--6">
+	    <div class="content">
+	        {% include home-footer.html %}
+	    </div>
+	</footer>
+  	{% include footer-includes.html %}
+  </body>
+
+</html>

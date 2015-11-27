@@ -1,0 +1,143 @@
+///*------------------------------------*\
+//    #LINKED DATA TOOGLER
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+$toggler-background-color: $color-Timberwolf;
+$toggler-button-color: $color-Celeste;
+$toggler-button-border-radius: 5px;
+$toggler-text-color: $color-Mine-Shaft;
+$toggler-text-button-color: $color-White;
+
+/* CONTAINER
+========================================================================== */
+.linked-data-toggler-container {
+	position: relative;
+	display: inline-block;
+	@include rem(margin, -15px -10px 0 0); @include rem(padding, 14px 17px 14px 15px);
+	border-radius: $toggler-button-border-radius;
+	background-color: $toggler-background-color;
+
+	&:before {
+		content: '';
+		position: absolute; right:100%; bottom:40%;
+		width: 0; height: 0;
+		border-style: solid;
+		border-width: 7px 6px 7px 0;
+		border-color: transparent $toggler-background-color transparent transparent;
+	}
+
+	@include breakpoint(small) {
+		float: none !important;
+		display: block;
+		@include rem(margin, 0 0 40px 0);
+		text-align: center;
+
+		&:before {
+			content: none;
+		}
+
+	}
+
+}
+
+/* TOOLTIP
+========================================================================== */
+.linked-data-toggler__tooltip {
+	position: relative;
+	display: inline-block;
+	@include rem(margin-right, 20px);
+	vertical-align: text-top;
+
+	&:hover, &:focus {
+		.linked-data-toggler__tooltip-text {
+			display: inline-block;
+		}
+	}
+
+}
+
+.linked-data-toggler__tooltip-text {
+	position: absolute; top: 20px; left: -20px;
+	z-index: $z-index-jump;
+	display: none;
+	@include rem(padding, 15px 20px 15px 10px);
+	@include rem(width, 140px);
+	border-radius: 10px;
+	background-color: $color-Cod-Gray;
+	font-family: $font-special; @include rem(font-size, 12px); line-height: 120%; color: $toggler-text-button-color; text-align: left;
+
+	&:before {
+		content: '';
+		position: absolute; top: -5px; left: 20px;
+		width: 0; height: 0;
+		border-style: solid;
+		border-width: 0 6px 6px 6px;
+		border-color: transparent transparent $color-Cod-Gray transparent;
+	}
+
+}
+
+/* TOGGLER
+========================================================================== */
+.linked-data-toggler__text {
+	font-family: $font-special; @include rem(font-size, 14px); line-height: 120%; color: $toggler-text-color; font-weight: normal;
+}
+
+.linked-data-toggler__toggler {
+	background-color: $toggler-button-color;
+
+	&:hover, &:focus {
+		opacity: .8;
+		transition: opacity ease $basic-transition;
+	}
+
+}
+
+.linked-data-toggler__toggler-button-wrapper {
+	display: inline-block;
+	padding: 4px 13px 4px 5px;
+	border-radius: $toggler-button-border-radius;
+	background-color: $color-Ochre;
+	transition: background-color ease $basic-transition;
+
+	.is-active & {
+		background-color: $color-Dove-Gray;
+		transition: background-color ease $basic-transition;
+	}
+
+}
+
+.linked-data-toggler__toggler-button-holder {
+	position: relative; z-index: 1;
+	margin-right:11px;
+
+	&:before {
+		content: '';
+		z-index: -1;
+		position: absolute; top: 0; right: -2px;
+		width: 24px; height: 21px;
+		background-color: rgb(86,85,85);
+		border-radius: $toggler-button-border-radius;
+	}
+}
+
+.linked-data-toggler__toggler-button {
+	position: relative; z-index: 2;
+	transform:translateX(0);
+	transition: transform ease $basic-transition;
+
+	.is-active & {
+		transform:translateX(4px);
+		transition: transform ease $basic-transition;
+	}
+
+}
+
+.linked-data-toggler__toggler-text {
+	display: inline-block;
+	vertical-align: middle;
+	@include rem(width, 32px); //When the button toggles, it will remain the same width
+	font-family: $font-special; @include rem(font-size, 16px); line-height: 120%; color: $toggler-text-button-color; font-weight: bold; text-transform: uppercase;
+}

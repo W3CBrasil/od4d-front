@@ -1,0 +1,538 @@
+///*------------------------------------*\
+//    #ARTICLE CARDS
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+$main-color-articles: $color-Blue-Chill;
+$main-color-news: $color-Ochre;
+
+$main-color-articles--flipped: $color-Deep-Sea-Green;
+$main-color-news--flipped: $color-Tia-Maria;
+
+$card-padding-top: 25px;
+
+$card-height-default: 450px;
+$card-height-small: 215px;
+
+/* CARD WRAPPER
+========================================================================== */
+.article-cards__list {
+	display: inline-block;
+}
+
+
+//THIS IS WHAT ACTIVATES THE SALVATTORE MASONRY PLUGIN
+.article-cards__list[data-columns]::before {
+	content: '3 .col-4-12';
+	color: transparent;
+	position: absolute; top:0;
+	visibility: hidden;
+}
+
+
+/* CARD CONTAINER
+========================================================================== */
+.article-cards__card {
+	position: relative;
+	@include rem(margin-bottom, 20px);
+	@include rem(height, $card-height-default);
+	perspective: 1000;
+
+	@include breakpoint(small) {
+		@include rem(margin-bottom, 30px); @include rem(padding-bottom, 15px);
+		height: inherit;
+		border-bottom: 1px solid $color-Timberwolf;
+	}
+
+	[data-list-current-view="is-view-list"] & {
+		@include rem(margin-bottom, 30px); @include rem(padding-bottom, 15px);
+		height: inherit;
+		border-bottom: 1px solid $color-Timberwolf;
+	}
+
+
+}
+
+.article-cards__card--small {
+	@include rem(height, $card-height-small);
+	@include breakpoint(small) {
+		height: inherit;
+	}
+}
+
+.article-cards__card--fluid {
+	position: static;
+	height: inherit !important;
+
+	@include breakpoint(small) {
+		float: left;
+		width: 100%;
+	}
+
+}
+
+.article-cards__content-wrapper {
+	@include rem(padding, 0 20px);
+
+	@include breakpoint(small) {
+		padding: 0;
+	}
+
+}
+
+.article-cards__holder {
+	position: relative;
+	transition: $basic-transition;
+	transform-style: preserve-3d;
+
+	.is-flipped & {
+		transform: rotateY(180deg);
+	}
+
+}
+
+.article-cards__content {
+	position: absolute; top: 0; left: 0;
+	@include rem(height, $card-height-default);
+	backface-visibility: hidden;
+
+	.article-cards__card--small & {
+		@include rem(height, $card-height-small);
+
+		@include breakpoint(small) {
+			height: auto;
+		}
+
+	}
+
+	@include breakpoint(small) {
+		position: relative;
+		height: auto;
+	}
+
+	.article-cards__card--fluid & {
+		position: relative;
+		@include rem(padding-bottom, 25px);
+		height: auto;
+
+		@include breakpoint(small) {
+			@include rem(padding-bottom, 15px);
+		}
+	}
+
+}
+
+.article-cards__content--front {
+	z-index: 2;
+	transform: rotateY(0deg);
+	border-top:5px solid $main-color-articles;
+	background-color: $color-White;
+
+	.article-cards__card--news & {
+		border-top-color: $main-color-news;
+	}
+
+	@include breakpoint(small) {
+		border: none;
+		background-color: transparent;
+	}
+
+	[data-list-current-view="is-view-list"] & {
+		border: none;
+		background-color: transparent;
+	}
+
+}
+
+/* back, initially hidden pane */
+.article-cards__content--back {
+	right: 0;
+	width: 100%;
+	border-top-color: $main-color-articles--flipped;
+	transform: rotateY(-180deg);
+	background-color: $main-color-articles--flipped;
+
+	&:after {
+		content: '';
+		position: absolute; bottom: 0; right: 0;
+		width: 0; height: 0;
+		border-style: solid;
+		border-width: 0 0 56px 56px;
+		border-color: transparent transparent $main-color-articles transparent;
+	}
+
+	.article-cards__card--news & {
+		background-color: $main-color-news--flipped;
+
+		&:after {
+			border-color: transparent transparent $main-color-news transparent;
+		}
+
+		&.is-flipped {
+			border-top-color: $main-color-news--flipped;
+		}
+
+	}
+
+	@include breakpoint(small) {
+		display: none;
+	}
+
+}
+
+/* VIEW LIKE LIST CASES */
+[data-list-current-view="is-view-list"] {
+	[class*="col"]  {
+		width:100%;
+	}
+}
+/* CARD ARTICLE
+========================================================================== */
+.article-cards__article {
+	@include rem(padding-top, $card-padding-top);
+
+	@include breakpoint(small) {
+		padding-top: 0;
+	}
+}
+
+/* CARD THUMB
+========================================================================== */
+.article-cards__thumb {
+	display: block;
+	@include rem(margin, -$card-padding-top 0 $card-padding-top);
+	opacity: 1;
+	transition: opacity ease $basic-transition;
+
+	&:hover, &:focus {
+		opacity: .7;
+		transition: opacity ease $basic-transition;
+	}
+
+	@include breakpoint(exceptDesktop) {
+		width: 100%;
+	}
+
+	@include breakpoint(small) {
+		float: left;
+		margin-top: 0; @include rem(margin-right, 10px);
+		width: 145px; height: 142px;
+
+		.article-cards__card--fluid & {
+			display:none;
+		}
+
+	}
+
+	.article-cards__card--small & {
+		display: none;
+	}
+
+}
+
+
+/* CATEGORY
+========================================================================== */
+.article-cards__category {
+	display: inline-block;
+	@include rem(margin-bottom, 7px);
+	font-family: $font-special; @include rem(font-size, 11px); color: $main-color-articles; font-weight: bold; text-transform: uppercase;
+
+	.article-cards__card--news & {
+		color: $main-color-news;
+	}
+
+}
+
+
+/* HEADER
+========================================================================== */
+.article-cards__header {
+	@include rem(margin-bottom, 20px);
+	font-family: $font-special;
+
+	@include breakpoint(exceptDesktop) {
+		@include rem(margin-bottom, 10px);
+	}
+}
+
+.article-cards__title {
+	margin-bottom: 5px;
+	@include rem(font-size, 18px); line-height: 105%; font-weight: 600; color: $color-Cod-Gray;
+
+	@include breakpoint(exceptDesktop) {
+		@include rem(font-size, 16px);
+	}
+
+	.article-cards__card--highlight & {
+		@include rem(font-size, 30px);
+
+		@include breakpoint(exceptDesktop) {
+			@include rem(font-size, 22px);
+		}
+
+		@include breakpoint(small) {
+			@include rem(font-size, 20px);
+		}
+
+	}
+
+	.article-cards__card--fluid & {
+		@include rem(font-size, 20px); line-height: 120%;
+
+		@include breakpoint(small) {
+			@include rem(font-size, 18px);
+		}
+	}
+
+
+}
+
+.article-cards__date {
+	@include rem(font-size, 11px); line-height: 120%; font-weight: 600; color: $color-Dove-Gray;
+}
+
+.article-cards__site {
+	color: $main-color-news;
+}
+
+.article-cards__card-highlight-icon {
+	position: absolute; top:-2px; right:10px;
+	fill: $main-color-articles;
+
+	.article-cards__card--highlight & {
+		fill: $main-color-news;
+	}
+
+	@include breakpoint(small) {
+		float: left;
+		position: static;
+		margin-right: 10px;
+	}
+
+}
+
+/* CONTENT
+========================================================================== */
+.article-cards__excerpt-anchor {
+	&:hover, &:focus {
+		.article-cards__excerpt {
+			text-decoration: underline;
+		}
+	}
+}
+
+
+.article-cards__excerpt {
+	@include rem(margin-bottom, 10px);
+	@include rem(font-size, 15px); line-height: 120%; color: $color-Cod-Gray;
+
+	.article-cards__card--small & {
+		display: none;
+	}
+
+	.article-cards__card--highlight & {
+		display: inline-block;
+
+		@include breakpoint(small) {
+			display: none;
+		}
+
+	}
+
+	&:hover a &, &:focus a & {
+		text-decoration: underline;
+	}
+
+	@include breakpoint(small) {
+		display: none;
+
+		.article-cards__card--fluid & {
+			display: inline-block;
+		}
+
+	}
+
+}
+
+
+/* BUTTONS
+========================================================================== */
+.article-cards__connections-toggler {
+	position: absolute; @include rem(right, 10px); @include rem(bottom, 10px);
+	z-index: $z-index-above;
+	transform:rotate(0);
+	transition: transform ease $basic-transition, fill ease .6s;
+	fill: $color-Silver;
+
+
+	&:hover, &:focus {
+		transform:rotate(90deg);
+		transition: transform ease $basic-transition, fill ease .6s;
+	}
+
+	.is-flipped & {
+		fill: $color-White;
+		transition: transform ease $basic-transition, fill ease .6s;
+	}
+
+	.no-supports.csstransforms3d & {
+		display: none;
+	}
+
+	@include breakpoint(small) {
+		display: none;
+	}
+
+}
+
+/* COLABORATE
+========================================================================== */
+.article-cards__connections-list {
+	position: relative;
+	@include rem(margin, 25px 0 0 20px); @include rem(padding-right, 20px);
+}
+
+.article-cards__connections-item {
+	position: relative; z-index:1;
+	@include rem(padding-bottom, 30px); padding-left:10px;
+	border-left:1px solid white;
+
+	&:before {
+		content: ''; position: absolute; left:-4px; z-index:2;
+	 	width:7px; height:7px;
+	 	border:2px solid white; border-radius:20px;
+	 	background-color: $main-color-articles--flipped;
+
+	 	.article-cards__card--news & {
+			background-color: $main-color-news--flipped;
+	 	}
+
+	}
+
+	&:last-child {
+		border-color: transparent;
+	}
+
+	.article-cards__card--small & {
+		@include rem(padding-bottom, 15px);
+	}
+
+}
+
+.article-cards__connections-anchor {
+	display: inline-block;
+	vertical-align: top;
+	@include rem(margin-top, -4px);
+	font-family: $font-special; @include rem(font-size, 13px); line-height: 120%; color: $color-White;
+}
+
+
+/* COLABORATE
+========================================================================== */
+.article-cards__colaborate {
+	border: 2px dashed $color-Silver;
+	background-color: $color-White;
+	text-align: center;
+
+	@include breakpoint(small) {
+		display: none;
+	}
+
+}
+
+.article-cards__colaborate--articles {
+	@include breakpoint(small) {
+		display: inline-block;
+		@include rem(margin-bottom, 30px);
+		width: 100%; @include rem(height, 130px);
+	}
+
+}
+
+.article-cards__colaborate-anchor {
+	display: flex; align-items: center; justify-content: center; flex-direction: column;
+	width: 100%; height: 100%;
+	transition: background-color ease $basic-transition;
+
+	&:hover, &:focus {
+		background-color: $main-color-articles;
+		text-decoration: none;
+		transition: background-color ease $basic-transition;
+
+		.article-cards__icon-plus {
+			fill: $color-White;
+		}
+
+		.article-cards__colaborate--news & {
+			background-color: $main-color-news;
+		}
+
+		.article-cards__colaborate-text {
+			color: $color-White;
+		}
+
+	}
+
+}
+
+.article-cards__icon-plus {
+	@include rem(margin-bottom, 10px);
+	fill: $main-color-articles;
+
+	.article-cards__colaborate--news & {
+		fill: $main-color-news;
+	}
+
+}
+
+.article-cards__colaborate-text {
+	display: block;
+	font-family: $font-special; @include rem(font-size, 20px); line-height: 120%; color: $main-color-articles;
+
+	.article-cards__colaborate--news & {
+		color: $main-color-news;
+	}
+
+}
+
+/* READ MORE
+========================================================================== */
+.article-cards__read-more {
+	@include rem(padding-right, 10px);
+	font-family: $font-special; @include rem(font-size, 11px); line-height: 120%; font-weight: bold; color: $color-Mine-Shaft; text-transform: uppercase;
+	background: url('../img/examples/icon-arrow.svg') no-repeat right center;
+}
+
+.article-cards__icon-language {
+	margin-right: 5px;
+	fill: $main-color-articles;
+}
+
+/* AUTHORS CARD
+========================================================================== */
+.article-cards__thumb-container {
+	display: table;
+	margin:auto; @include rem(margin-bottom, 25px);
+
+	@include breakpoint(exceptSmall) {
+		[data-list-current-view="is-view-list"] & {
+			float: left;
+		}
+	}
+
+}
+
+.article-cards__author-name {
+	margin-bottom: 3px;
+	@include rem(font-size, 14px); font-weight: bold; color: $color-Mine-Shaft;
+}
+
+.article-cards__author-anchor {
+	@include rem(font-size, 12px); font-weight: bold; color: $main-color-articles;
+
+	.article-cards__card--news & {
+		color: $main-color-news;
+	}
+}

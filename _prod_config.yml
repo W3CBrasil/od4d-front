@@ -1,0 +1,13 @@
+# Site settings
+title: OD4D Network
+email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  OD4D Network Description.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://platform.od4d.org" # the base hostname & protocol for your site
+
+# Build settings
+env : prod
+destination : build
+exclude : ['css', '_sass', 'feed.xml', 'jekyll', 'node_modules', 'gulpfile.js', 'Gruntfile.js', '.DS_Store', 'package.json']
+keep_files : ['css', 'js', 'img', 'sass']

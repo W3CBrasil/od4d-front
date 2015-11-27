@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+{% include header.html %}
+<main role="main" id="main">
+    <div class="section section--1">
+        {% include about-platform.html %}
+        {% include latest-news.html %}
+    </div>
+    <div class="section section--2">
+        {% include concepts.html %}
+    </div>
+    {% include be-part.html %}
+    <div class="section section--3">
+        <div class="content">
+            {% include articles.html %}
+            <hr class="divider" />
+            {% include videos.html %}
+            {% comment %} {% include our-platform.html %} {% endcomment %}
+        </div>
+    </div>
+    <div class="section section--4">
+        <div class="content">
+            {% include social-networks.html %}
+        </div>
+    </div>
+    <div class="section section--5">
+        <div class="content">
+            {% include understand-better.html %}
+        </div>
+    </div>
+</main>
+<footer class="section section--6">
+    <div class="content">
+        {% include footer.html %}
+    </div>
+</footer>

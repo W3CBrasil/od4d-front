@@ -1,0 +1,28 @@
+///*------------------------------------*\
+//    #RELATED POSTS
+//\*------------------------------------*/
+
+/* LIST
+========================================================================== */
+.article-related__item {
+	text-align: right;
+	font-family: $font-special; color: $color-White;
+
+	&:nth-child(even) {
+		text-align: left;
+	}
+
+	@include breakpoint(small) {
+		width: 45%; margin-right: 0;
+	}
+
+}
+
+.article-related__title {
+	margin-bottom: 5px;
+	@include rem(font-size, 13px); text-transform: uppercase; font-weight: bold;
+}
+
+.article-related__post {
+	@include rem(font-size, 18px); line-height: 120%;
+}

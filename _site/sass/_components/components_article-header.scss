@@ -1,0 +1,73 @@
+///*------------------------------------*\
+//    #POST HEADER
+//\*------------------------------------*/
+
+/* WRAPPER
+========================================================================== */
+.article-header-wrapper {
+	@include rem(margin-bottom, -260px); @include rem(padding, 100px 0);
+	background-color: $main-color-articles;
+
+	//If there's no bio in the article
+	.article-wrapper--no-bio & {
+		margin-bottom: 0; @include rem(padding-bottom, 20px);
+	}
+
+	.is-network-article & {
+		background-color: $main-color-news;
+	}
+
+	@include breakpoint(small) {
+		margin-bottom: 0; @include rem(padding, 50px 0 40px);
+	}
+
+}
+
+/* CONTENT
+========================================================================== */
+.article-header-content {
+	margin: auto; @include rem(margin-bottom, 20px);
+
+	//If there's no bio in the article
+	.article-wrapper--no-bio & {
+		margin-bottom: 0;
+	}
+
+	@include breakpoint(small) {
+		margin-bottom: 0;
+	}
+
+}
+
+/* TITLE
+========================================================================== */
+.article-header__title {}
+
+
+/* EXTRA INFO
+========================================================================== */
+.article-header__info {
+	display: inline-block;
+	@include rem(margin-bottom, 60px);
+	font-family: $font-special; @include rem(font-size, 13px); color: $color-White;
+
+	@include breakpoint(small) {
+		margin-bottom: 0;
+	}
+
+}
+
+.article-header__category {
+	display: block;
+	margin-bottom: 3px;
+	text-transform: uppercase; font-weight: bold;
+}
+
+.article-header__time {
+	display: inline-block;
+	&:after {
+		content: '|';
+		color: currentColor;
+		@include rem(padding, 0 10px);
+	}
+}

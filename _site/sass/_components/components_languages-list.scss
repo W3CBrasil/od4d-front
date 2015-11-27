@@ -1,0 +1,35 @@
+///*------------------------------------*\
+//    #LANGUAGES
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+
+
+/* LIST
+========================================================================== */
+.languages-list {
+	float: left;
+	@include rem(margin-right, 25px); @include rem(padding-top, 25px);
+
+	@include breakpoint(small) {
+		@include rem(margin-right, 10px);
+	}
+
+}
+
+.languages-list__item {
+	display: inline-block;
+	margin-right: 6px;
+}
+
+.languages-list__anchor {
+
+	&.is-current, &:hover, &:focus {
+		.icon-languages {
+			fill: $color-Silver;
+			transition:fill ease $basic-transition;
+		}
+	}
+
+}

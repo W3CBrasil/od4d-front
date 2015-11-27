@@ -1,0 +1,147 @@
+///*------------------------------------*\
+//    #HOME HEADER
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+$search-background-color: $color-Deep-Sea-Green;
+$search-text-color: $color-White;
+
+
+/* SECTION
+========================================================================== */
+.home-header-section {
+	position: relative;
+
+	&:after {
+		content: '';
+		position: absolute; right:0; left:-559px; bottom: -54px; margin:auto;
+		width: 798px; height: 72px;
+		background:url('../img/backgrounds/background-header.svg') no-repeat center center;
+
+		@include breakpoint(exceptDesktop) {
+			content: none;
+		}
+
+	}
+
+}
+
+.home-header-wrapper {
+	position: relative;
+	overflow-x: hidden; //We need this for the ".home-search-container"
+	@include rem(padding-top, 75px);
+	background-color: $color-Blue-Chill;
+
+	&:after {
+		content: '';
+		position: absolute; bottom: 100%;
+		width: 100%; height: 50px;
+		background:url('../img/backgrounds/background-header.svg') no-repeat center center;
+	}
+}
+
+/* WRAPPER
+========================================================================== */
+
+/* CONTENT
+========================================================================== */
+
+/* LOGO
+========================================================================== */
+.home-header-wrapper__logo-container {
+	@include breakpoint(small) {
+		@include rem(margin-bottom, 40px);
+		text-align: center;
+	}
+}
+
+.home-header-wrapper__logo {}
+
+/* INTRO PARAGRAPH
+========================================================================== */
+.home-header__intro {
+	position: relative;
+	@include rem(margin-bottom, 70px);
+	@include rem(font-size, 14px); line-height: 125%; color: $color-White; text-align:center;
+
+	&:after {
+		content: '';
+		position: absolute; right: 0; left: 0; bottom: -25%;
+		width: 25px; height: 2px; background: $color-White;
+		margin: auto; text-align: center;
+	}
+
+}
+
+.home-header__intro--highlight {
+	display: block;
+	margin-bottom: 1px;
+	font-family: $font-special; font-weight:600; text-transform: uppercase;
+}
+
+/* SEARCH CONTAINER
+========================================================================== */
+.home-search-container {
+	position: relative; z-index:1;
+	background-color: $search-background-color;
+
+	&:before {
+		content: '';
+		position: absolute; right: 90%; z-index: -1;
+		width: 60px; height: 100%;
+		background-color:$search-background-color;
+		transform: skew(-40deg);
+
+		@include breakpoint(exceptDesktop) {
+			right: 85%;
+		}
+
+		@include breakpoint(small) {
+			transform:none;
+			width:100%;
+		}
+
+	}
+
+	&:after {
+		content:'';
+		position: absolute; left: 100%;
+		width: 200%; height: 100%;
+		background-color: $search-background-color;
+	}
+
+}
+
+.home-search-container__search {
+	@include rem(padding, 18px 0 18px 20px);
+	width: 80%;
+	font-family: $font-special; @include rem(font-size, 14px); font-weight: 600; text-transform: uppercase; color: $search-text-color;
+	background-color: $search-background-color;
+	border: none;
+
+	@include breakpoint(exceptSmall) {
+		width: auto;
+	}
+
+	@include placeholder {
+		color: $search-text-color;
+	}
+
+}
+
+.home-search-container__submit {
+	display:inline-block;
+	width: 30px; height: 30px;
+	border: none;
+	background-color: transparent;
+	vertical-align:text-top; text-indent: -9999px;
+	background: url('../img/icons/icon-finder.svg') no-repeat;
+	transition: opacity ease $basic-transition;
+
+	&:hover, &:focus {
+		opacity: .4;
+		transition: opacity ease $basic-transition;
+	}
+
+}

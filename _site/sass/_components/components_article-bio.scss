@@ -1,0 +1,362 @@
+///*------------------------------------*\
+//    #ARTICLE BIO
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+$bio-elements-border-color: $color-Delta;
+$thumb-radius: 70px;
+
+/* WRAPPER
+========================================================================== */
+.article-bio {
+	float: left;
+	@include rem(padding, 30px 0 30px 40px);
+	width: 100%;
+	background-color: $color-White;
+	border: 1px solid $bio-elements-border-color;
+
+	@include breakpoint(small) {
+		display: none;
+	}
+}
+
+/* CONTENT
+========================================================================== */
+
+/* BIO ABOUT
+========================================================================== */
+.article-bio__about-container {
+	float: left;
+	@include rem(margin-right, 15px);
+	@include rem(width, 160px);
+	font-family: $font-special;
+
+	@include breakpoint(exceptDesktop) {
+		@include rem(width, 140px);
+	}
+
+}
+
+.article-bio__about-container--network {
+	@include rem(width, 240px);
+
+	@include breakpoint(exceptDesktop) {
+		@include rem(width, 200px);
+	}
+
+}
+
+.article-bio__thumb {
+	float: left;
+	margin-top:-10px; @include rem(margin-right, 12px); padding: 4px;
+	border-radius: $thumb-radius;
+	border: 1px solid $bio-elements-border-color;
+}
+
+.article-bio__title {
+	margin-bottom: 5px;
+	@include rem(font-size, 14px); line-height: 120%; font-weight: 700; color: $color-Mine-Shaft;
+}
+
+.article-bio__link {
+	display: block;
+	@include rem(margin-bottom, 20px);
+	@include rem(font-size, 12px); line-height: 120%; font-weight: 700; color: $color-Blue-Chill;
+
+	.is-network-article & {
+		color: $color-Ochre;
+	}
+
+}
+
+.article-bio__bio {
+	font-family: $font-primary; @include rem(font-size, 13px); line-height: 120%; color: $color-Mine-Shaft;
+}
+
+/* BIO NUMBERS
+========================================================================== */
+.article-bio__numbers-container {
+	position: relative;
+	float: left;
+	@include rem(margin-right, 25px);
+	@include rem(width, 202px);
+	font-family: $font-special; text-align: center;
+
+	@include breakpoint(exceptDesktop) {
+		@include rem(width, 140px);
+	}
+
+	&:before, &:after {
+		content: '';
+		position: absolute; top:20%;
+		height: 76px; width: 1px;
+		background-color: $color-Silver;
+	}
+
+	&:before {
+		left: 0;
+	}
+
+	&:after {
+		right: 0;
+	}
+
+	&:last-child {
+		&:before, &:after {
+			content: none;
+		}
+	}
+
+}
+
+.article-bio__numbers-container--compost {
+	@include rem(width, 300px);
+
+	@include breakpoint(exceptDesktop) {
+		@include rem(width, 220px);
+	}
+
+}
+
+.article-bio__numbers {
+	display: inline-block;
+	@include rem(width, 120px);
+	line-height: 1;
+	vertical-align: top;
+
+	@include breakpoint(exceptDesktop) {
+		@include rem(width, 93px);
+	}
+
+}
+
+.article-bio__header {
+	display: block;
+	margin-bottom: 5px;
+	@include rem(font-size, 14px); color: $color-Gray;
+}
+
+.article-bio__numbers-title {
+	display: block;
+	margin-bottom: 5px;
+	@include rem(font-size, 14px); font-weight: 700; color: $color-Gray; text-transform: uppercase;
+}
+
+.article-bio__number {
+	display: block;
+	@include rem(margin-bottom, 15px);
+	@include rem(font-size, 60px); font-weight: 600; color: $color-Mine-Shaft;
+
+	@include breakpoint(exceptDesktop) {
+		@include rem(font-size, 55px);
+	}
+
+}
+
+.article-bio__numbers-description {
+	display: block;
+	font-family: $font-special; @include rem(font-size, 14px); line-height: 120%; color: $color-Mine-Shaft;
+
+	@include breakpoint(exceptDesktop) {
+		@include rem(font-size, 13zpx);
+	}
+
+}
+
+/* DONUT GRAPH
+========================================================================== */
+.article-bio__donut-container {
+	float: left;
+	@include rem(width, 280px);
+
+	@include breakpoint(exceptDesktop) {
+		@include rem(width, 240px);
+	}
+
+}
+
+/* BIO GRAPH
+========================================================================== */
+.article-bio__graph-container {
+	float: left;
+	@include rem(width, 280px);
+
+	@include breakpoint(exceptDesktop) {
+		@include rem(width, 190px);
+	}
+
+}
+
+.article-bio__graph-title {
+	@include rem(margin-bottom, 10px);
+	font-family: $font-special; @include rem(font-size, 14px); line-height: 120%; text-transform: uppercase; color: $color-Gray; font-weight: 700;
+}
+
+/* ACTIVE LIST
+========================================================================== */
+.active-list {
+	position: relative;
+}
+
+.active-list__item {
+	position: absolute;
+	display: inline-block;
+
+	&:nth-child(1) {
+		top: 30px; left: 20px;
+
+		.active-list__thumb {
+
+			width: 84px; height: 84px;
+
+			@include breakpoint(exceptDesktop) {
+				top: 20px; left: 15px;
+				width: 65px; height: 65px;
+			}
+		}
+
+
+	}
+
+	&:nth-child(2) {
+		left: 100px;
+
+		@include breakpoint(exceptDesktop) {
+			left: 80px;
+		}
+
+		.active-list__thumb {
+			width: 60px; height: 60px;
+			@include breakpoint(exceptDesktop) {
+				left: 80px;
+				width: 46px; height: 47px;
+			}
+		}
+
+	}
+
+	&:nth-child(3) {
+		top: 45px; left: 195px;
+
+		@include breakpoint(exceptDesktop) {
+			left: 130px;
+		}
+
+		.active-list__thumb {
+			width: 60px; height: 60px;
+
+			@include breakpoint(exceptDesktop) {
+				top: 40px; right: 15px;
+				width: 46px; height: 47px;
+			}
+
+		}
+
+	}
+
+	&:nth-child(4) {
+		top: 55px; left: 150px;
+
+		@include breakpoint(exceptDesktop) {
+			left: 95px;
+		}
+
+		.active-list__thumb {
+			width: 36px; height: 36px;
+
+			@include breakpoint(exceptDesktop) {
+				top: 55px; right: 75px;
+				width: 28px; height: 28px;
+			}
+
+		}
+	}
+
+	&:nth-child(5) {
+
+		.active-list__thumb {
+			width: 36px; height: 36px;
+
+			@include breakpoint(exceptDesktop) {
+				width: 28px; height: 28px;
+			}
+
+		}
+
+	}
+
+	&:nth-child(6) {
+		top: 5px; left: 180px;
+
+		@include breakpoint(exceptDesktop) {
+			left: 140px;
+		}
+
+		.active-list__thumb {
+			width: 36px; height: 36px;
+			@include breakpoint(exceptDesktop) {
+				width: 28px; height: 28px;
+			}
+		}
+
+	}
+
+}
+
+.active-list__anchor {
+	display: inline-block;
+	transition: transform ease $basic-transition;
+
+	&:hover, &:focus {
+		opacity: .7;
+		transform: scale(1.1);
+		transition: transform ease $basic-transition;
+	}
+
+}
+
+.active-list__thumb {
+	border-radius: $thumb-radius;
+}
+
+/* PERCENT GRAPH
+========================================================================== */
+.article-bio__numbers-container--percentage {
+	display: table;
+	@include rem(width, 250px);
+	text-align: center;
+
+	@include breakpoint(exceptDesktop) {
+		@include rem(width, 170px);
+	}
+
+}
+
+.article-bio__graph-container {
+	@include rem(margin-top, 35px);
+
+	@include breakpoint(exceptDesktop) {
+		@include rem(margin-top, 15px);
+	}
+
+}
+
+.article-bio__graph-container-text {
+	@include rem(width, 140px);
+	font-family: $font-special; @include rem(font-size, 11px); line-height: 120%; color: $color-Mine-Shaft;	text-transform: uppercase;
+}
+
+.article-bio__graph-container-percentage {
+	display: inline-block;
+	@include rem(font-size, 40px); font-weight: bold;
+
+	@include breakpoint(exceptDesktop) {
+		@include rem(margin-bottom, 20px);
+	}
+
+}
+
+.article-bio__graph-container-text {
+display: inline-block;
+}

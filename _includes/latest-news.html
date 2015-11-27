@@ -1,0 +1,15 @@
+<!-- LATEST NEWS -->
+<section class="content latest-news-container">
+	<div class="latest-news-container__header">
+		<h2 class="title">Últimas notícias</h2>
+		{% include linked-data-toggler.html %}
+	</div>
+
+	<div id="js-article-cards__list" class="article-cards__list">
+		{% include news/news-row--first.html %}
+		{% include news/news-row--last.html %}
+		{% comment %} {% include news/news-articles.html %} {% endcomment %}
+	</div>
+	<a href="{{ "news/" | prepend: page.baseurl }}" class="anchor-button">Leia todas as notícias</a>
+</section>
+<!-- END LATEST NEWS -->

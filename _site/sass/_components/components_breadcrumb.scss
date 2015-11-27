@@ -1,0 +1,41 @@
+///*------------------------------------*\
+//    #BREADCRUMB
+//\*------------------------------------*/
+
+/* CONTAINER
+========================================================================== */
+.breadcrumb {
+	display: inline-block;
+	@include rem(margin, 55px 0 50px);
+	width: 100%;
+}
+
+/* LIST
+========================================================================== */
+.breadcrumb-list {}
+
+/* ITENS
+========================================================================== */
+.breadcrumb-list__item {
+	position: relative;
+	display: inline-block;
+	@include rem(padding-right, 10px);
+	font-family: $font-special; @include rem(font-size, 11px); line-height: 120%; text-transform: uppercase; font-weight: bold; color: $color-Dove-Gray;
+
+	&:before {
+		content: '\003E';
+		position: absolute; left: -10px; top: -1px;
+
+	}
+
+	&:first-child {
+		&:before {
+			content: none;
+		}
+	}
+
+}
+
+.breadcrumb-list__anchor {
+	color: $color-Blue-Chill;
+}

@@ -1,0 +1,125 @@
+///*------------------------------------*\
+//    #VIDEOS
+//\*------------------------------------*/
+
+/* WRAPPER
+========================================================================== */
+.videos-wrapper {
+	@include rem(margin-bottom, 100px);
+
+	@include breakpoint(small) {
+		@include rem(margin-bottom, 65px);
+	}
+
+}
+/* LIST
+========================================================================== */
+.videos-list {
+	display: inline-block;
+	@include rem(margin-bottom, 30px);
+
+}
+
+.videos-list__item {
+
+	@include breakpoint(small) {
+		@include rem(margin-bottom, 40px);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+	}
+
+}
+
+/* VIDEO THUMB
+========================================================================== */
+.videos-list__thumb-anchor {
+	position: relative;
+	display: inline-block;
+	@include rem(margin-bottom, 20px);
+	width: 100%; height: 100%;
+
+	@include breakpoint(small) {
+		text-align: center;
+	}
+
+}
+
+.videos-list__thumb {
+	opacity:1;
+	transition: opacity ease $basic-transition;
+
+	.videos-list__thumb-anchor:hover &,
+	.videos-list__thumb-anchor:focus &	{
+		opacity:.8;
+		transition: opacity ease $basic-transition;
+	}
+
+}
+
+.videos-list__thumb-icon {
+	position: absolute; left:0; right:0; top:0; bottom: 0; margin:auto;
+	opacity: .4;
+	transition: transform ease $basic-transition,  opacity ease $basic-transition;
+
+	.videos-list__thumb-anchor:hover &,
+	.videos-list__thumb-anchor:focus & {
+		opacity:1;
+		transform: scale(1.3);
+		transition: transform ease $basic-transition,  opacity ease $basic-transition;
+	}
+
+}
+
+/* VIDEO DATE
+========================================================================== */
+.videos-list__date-wrapper {
+	@include rem(padding, 10px);
+	text-align: center;
+	background-color: $color-Blue-Chill;
+	font-family: $font-special; @include rem(font-size, 30px); color: $color-White; font-weight: 600; text-transform: uppercase;
+
+	@include breakpoint(exceptDesktop) {
+		padding: 5px;
+	}
+
+	@include breakpoint(small) {
+		width: 15%;
+		@include rem(margin-right, 15px);
+	}
+
+}
+
+.videos-list__date {}
+
+.videos-list__date--month {
+	display: block;
+	@include rem(font-size, 11px);
+}
+
+/* VIDEO INFO
+========================================================================== */
+.videos-list__info {
+	color: $color-Cod-Gray;
+}
+
+.videos-list__description {
+	@include breakpoint(small) {
+		width: 75%;
+	}
+}
+
+.videos-list__title {
+	@include rem(margin-bottom, 15px);
+	font-family: $font-special; @include rem(font-size, 18px); line-height: 105%; font-weight: 600;
+
+	@include breakpoint(small) {
+		margin-bottom: 5px;
+	}
+}
+
+.videos-list__excerpt {
+	@include rem(font-size, 14px); line-height: 120%;
+}

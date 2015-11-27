@@ -1,0 +1,49 @@
+<!-- DONUT CHART -->
+<div class="donut-chart__container">
+	<ul class="donut-chart-list">
+		<li class="donut-chart-list__item">
+			<a href="#" class="donut-chart-list__anchor">dados abertos</a>
+		</li>
+		<li class="donut-chart-list__item">
+			<a href="#" class="donut-chart-list__anchor">educação</a>
+		</li>
+		<li class="donut-chart-list__item">
+			<a href="#" class="donut-chart-list__anchor">privacidade</a>
+		</li>
+		<li class="donut-chart-list__item">
+			<a href="#" class="donut-chart-list__anchor">licenças</a>
+		</li>
+		<li class="donut-chart-list__item">
+			<a href="#" class="donut-chart-list__anchor">outros</a>
+		</li>
+	</ul>
+	<div id="canvas-holder" class="donut-chart">
+		<canvas id="chart-area" class="donut-chart-canvas">&nbsp;</canvas>
+	</div>
+	<script>
+		//Chart data for the first 4 categories. The last item is always the rest of the categories.
+		var donutChartData = [
+			{
+				label: 'Dados abertos',
+				value: '50'
+			},
+			{
+				label: 'Educação',
+				value: '45'
+			},
+			{
+				label: 'privacidade',
+				value: '40'
+			},
+			{
+				label: 'licenças',
+				value: '35'
+			},
+			{
+				label: 'outras',
+				value: '100'
+			}
+		]
+	</script>
+</div>
+<!-- END DONUT CHART -->

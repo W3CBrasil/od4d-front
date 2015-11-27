@@ -1,0 +1,12 @@
+///*------------------------------------*\
+//    #LINKS
+//\*------------------------------------*/
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity ease .3s;
+    &:focus, &:hover {
+		text-decoration: underline;
+    }
+}

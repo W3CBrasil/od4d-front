@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body data-language="pt-br">
+	{% include navigation.html %}
+
+	<main id="main" role="main">
+		<div class="article-wrapper">
+			{% include list/list-header.html %}
+			<div class="section section--1">
+				<div class="content">
+					{% include breadcrumb.html %}
+					<div id="js-list-card-wrapper" class="list-card-wrapper">
+						{% include list/list-card-exhibition.html %}
+						<div id="js-article-cards__list" class="article-cards__list" data-columns>
+							{% include author/author-articles.html %}
+						</div>
+					</div>
+					{% include pagination.html %}
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer class="section section--6">
+	    <div class="content">
+	        {% include home-footer.html %}
+	    </div>
+	</footer>
+
+  	{% include footer-includes.html %}
+  </body>
+
+</html>

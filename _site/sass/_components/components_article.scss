@@ -1,0 +1,40 @@
+///*------------------------------------*\
+//    #ARTICLES
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+$main-color-articles: $color-Blue-Chill;
+$main-color-news: $color-Tia-Maria;
+
+/* WRAPPER
+========================================================================== */
+.article-wrapper {}
+
+/* CONTENT
+========================================================================== */
+.article-content {
+	@include rem(margin-top, 120px);
+	@include rem(max-width, 780px);
+
+	//If there's no bio in the article
+	.article-wrapper--no-bio & {
+		margin-top: 0;
+	}
+
+	@include breakpoint(small) {
+		margin-top: 0;
+	}
+
+}
+
+/* RELATED CONTENT
+========================================================================== */
+.article-related-content-wrapper {
+	@include rem(padding, 55px 0);
+	background-color: $main-color-articles;
+
+	.is-network-article & {
+		background-color: $main-color-news;
+	}
+}

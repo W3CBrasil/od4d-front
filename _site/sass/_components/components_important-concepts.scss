@@ -1,0 +1,60 @@
+///*------------------------------------*\
+//    #IMPORTANT CONCEPTS
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+
+/* WRAPPER
+========================================================================== */
+.important-concepts-wrapper {
+
+}
+
+
+/* CONTENT
+========================================================================== */
+
+/* HEADER
+========================================================================== */
+
+/* LIST
+========================================================================== */
+.important-concepts-list {
+	display: inline-block;
+	@include rem(margin-bottom, 20px);
+
+	@include breakpoint(small) {
+		text-align: center;
+	}
+
+}
+
+.important-concepts-list__item {
+	@include rem(margin-bottom, 50px);
+
+	&:nth-child(4n) {
+		margin-right: 0;
+	}
+
+	@include breakpoint(small) {
+		float: none;
+		display: inline-block;
+		width: 140px;
+		margin-right: 5px;
+
+		&:nth-child(4n) {
+			margin-right: 10px;
+		}
+
+	}
+
+}
+
+.important-concepts-list__thumb {
+	@include rem(margin-bottom, 15px);
+}
+
+.important-concepts-list__title {
+	font-family: $font-special; @include rem(font-size, 14px);
+}

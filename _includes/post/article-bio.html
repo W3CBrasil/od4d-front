@@ -1,0 +1,17 @@
+<!-- ARTICLE BIO -->
+<aside class="article-bio">
+	<img class="article-bio__thumb" src="{{ "img/examples/article-bio-thumb.jpg" | prepend: page.baseurl }}" alt="Yasodara Córdova" aria-hidden="true" role="presentation" />
+	<div class="article-bio__about-container">
+		<h2 class="article-bio__title">Yasodara Córdova</h2>
+		<a class="article-bio__link" href="#">yaso.is</a>
+		<p class="article-bio__bio">Yasodara trabalha na organização W3C e já participou do projeto “x’.</p>
+	</div>
+	<div class="article-bio__numbers-container">
+		<p class="article-bio__numbers"><span class="article-bio__numbers-title">Ao todo tem</span> <span class="article-bio__number">34</span> <span class="article-bio__numbers-description">posts publicados na plataforma</span></p>
+	</div>
+	<div class="article-bio__graph-container">
+		<h3 class="article-bio__graph-title">Média de posts/mês</h3>
+		{% include charts/single-line-chart.html %}
+	</div>
+</aside>
+<!-- END ARTICLE BIO -->

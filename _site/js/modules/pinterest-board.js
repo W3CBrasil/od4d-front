@@ -1,0 +1,1 @@
+define(['pinterest'], function () {});

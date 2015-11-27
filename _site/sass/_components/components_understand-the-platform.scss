@@ -1,0 +1,94 @@
+///*------------------------------------*\
+//    #UNDERSTAND BETTER
+//\*------------------------------------*/
+
+/* CONTAINER
+========================================================================== */
+.understand-better-container {
+
+}
+
+/* VIDEO CONTAINER
+========================================================================== */
+.understand-better__video-container {
+	@include breakpoint(small) {
+		@include rem(margin-bottom, 40px);
+	}
+}
+
+/* LOGO
+========================================================================== */
+.understand-better__logo-wrapper {
+	@include breakpoint(small) {
+		@include rem(margin-bottom, 15px);
+		text-align: center;
+	}
+}
+
+.understand-better__logo {
+	@include rem(margin, -110px 0 0 -20px);
+
+	@include breakpoint(exceptDesktop) {
+		width: 332px; height: 283px;
+	}
+
+	@include breakpoint(small) {
+		margin: 0 0 40px;
+		width: auto; height: auto;
+	}
+
+}
+
+/* SOCIAL SHARE
+========================================================================== */
+.understand-better-share-container {
+	position: relative; z-index: 1;
+	float: right;
+	@include rem(margin, -130px -10px 0 0);
+	@include rem(width, 190px);
+
+	@include breakpoint(exceptDesktop) {
+		@include rem(width, 130px);
+	}
+
+	@include breakpoint(small) {
+		float: none;
+		margin: 0;
+		width: 100%;
+	}
+}
+
+.understand-better-share {
+}
+
+.understand-better-share__title {
+	position: relative;
+	margin-bottom: 5px;
+	font-family: $font-special; @include rem(font-size, 14px); line-height: 120%; color: $color-Mine-Shaft;
+
+	&:before {
+		content: '';
+		position: absolute; @include rem(top, -13px); right: 0; left: 0;
+		@include rem(width, 40px); height: 3px;
+		background-color: currentColor;
+	}
+}
+
+.understand-better-share__item {
+	float: left;
+	margin-right: 3px;
+}
+
+.understand-better-share__anchor {
+	opacity: 1;
+
+	&:hover, &:focus {
+		opacity: .7;
+		transition: opacity ease $basic-transition;
+	}
+
+}
+
+.icon-social-networks-share {
+	width: 21px; height: 21px;
+}

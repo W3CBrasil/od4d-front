@@ -1,0 +1,17 @@
+<!-- CATEGORY BIO -->
+<aside class="article-bio">
+	<div class="article-bio__graph-container">
+		<h3 class="article-bio__graph-title">Categoria mais citada por:</h3>
+		{% include active-list.html %}
+	</div>
+	<div class="article-bio__numbers-container article-bio__numbers-container--compost">
+		<h3 class="article-bio__header">Número de vezes que apareceu:</h3>
+		<p class="article-bio__numbers"><span class="article-bio__number">57</span> <span class="article-bio__numbers-description">na plataforma</span></p>
+		<p class="article-bio__numbers"><span class="article-bio__number">14</span> <span class="article-bio__numbers-description">na rede</span></p>
+	</div>
+	<div class="article-bio__graph-container">
+		<h3 class="article-bio__graph-title">Média de posts/Mês</h3>
+		{% include charts/network-line-chart.html %}
+	</div>
+</aside>
+<!-- END CATEGORY BIO -->

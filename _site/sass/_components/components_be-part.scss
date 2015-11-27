@@ -1,0 +1,122 @@
+///*------------------------------------*\
+//    #BE PART
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+
+/* WRAPPER
+========================================================================== */
+.be-part-wrapper {
+	position: relative;
+	z-index: $z-index-ground;
+	overflow: hidden;
+	@include rem(padding, 85px 0);
+	background-color: $color-Ochre;
+
+	&:before {
+		content: '';
+		position: absolute; top: 30%; left: 0; right: 0;
+		z-index: $z-index-underground;
+		margin: auto;
+		width: 1110px; height: 210px;
+		background: url('../img/be-part/be-part-background.svg') no-repeat;
+
+		@include breakpoint(exceptDesktop) {
+			background: url('../img/be-part/be-part-background--medium.svg') no-repeat;
+			width: 760px; height: 143px;
+		}
+
+		@include breakpoint(small) {
+			background: none;
+		}
+
+	}
+
+	@include breakpoint(small) {
+		@include rem(padding, 50px 0);
+	}
+
+}
+
+/* CONTENT
+========================================================================== */
+
+/* HEADER
+========================================================================== */
+.be-part-header {
+	@include rem(margin-bottom, 40px);
+	font-family: $font-special; @include rem(font-size, 40px); line-height: 120%; color: $color-White;
+}
+
+.be-part-header__title {
+	@include rem(margin-bottom, 15px);
+
+	@include breakpoint(small) {
+		@include rem(font-size, 30px); line-height: 120%;
+	}
+}
+
+.be-part-header__description {
+	@include rem(font-size, 18px);
+}
+
+/* LIST
+========================================================================== */
+.be-part-list {}
+
+.be-part-list__item {
+	@include breakpoint(small) {
+		@include rem(margin-bottom, 65px);
+		text-align: center;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.be-part-list__thumb {
+	@include rem(margin-bottom, 10px);
+
+	@include breakpoint(exceptDesktop) {
+		height: 152px;
+	}
+
+	@include breakpoint(small) {
+		@include rem(margin-bottom, 20px);
+		height: auto;
+	}
+
+}
+
+.be-part-list__thumb-wrapper {
+	@include breakpoint(small) {
+		text-align: center;
+	}
+}
+
+.be-part-list__title {
+	@include rem(margin-bottom, 15px);
+	font-family: $font-special; @include rem(font-size, 18px); line-height: 110%; font-weight: bold; color: $color-Bronze;
+}
+
+.be-part-list__paragraph {
+	@include rem(margin-bottom, 25px);
+	color: $color-Bronze;
+}
+
+/* GUIDE
+========================================================================== */
+.be-part-wrapper--bottom {
+	@include rem(padding, 55px);
+	background-color: $color-Tia-Maria;
+
+	@include breakpoint(small) {
+		@include rem(padding, 20px);
+	}
+}
+
+.be-part-guide {
+	font-family: $font-special; @include rem(font-size, 13px); line-height: 120%; color: $color-White;
+}

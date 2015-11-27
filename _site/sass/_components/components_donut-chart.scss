@@ -1,0 +1,95 @@
+///*------------------------------------*\
+//    #DONUT CHARTS
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+$chart-color-1: rgb(253,193,120);
+$chart-color-2: rgb(240,99,71);
+$chart-color-3: rgb(144,11,58);
+$chart-color-4: rgb(68,88,115);
+$chart-color-5: rgb(68,68,68);
+
+/* WRAPPER
+========================================================================== */
+.donut-chart__container {
+	position: relative;
+
+}
+
+/* CHART
+========================================================================== */
+.donut-chart {
+	position: absolute;
+	@include rem(top, -45px); @include rem(right, 15px);
+	z-index: $z-index-ground;
+	width: 150px; height: 150px;
+
+	@include breakpoint(exceptDesktop) {
+		@include rem(top, -25px);
+		width: 107px; height: 107px;
+	}
+}
+
+.donut-chart-canvas {
+	width: 150px; height: 150px;
+
+	@include breakpoint(exceptDesktop) {
+		width: 107px; height: 107px;
+	}
+
+}
+
+/* LIST
+========================================================================== */
+.donut-chart-list {
+	@include rem(margin-top, 30px);
+
+	@include breakpoint(exceptDesktop) {
+		@include rem(margin-top, 20px);
+	}
+}
+
+.donut-chart-list__item {
+	position: relative;
+	margin-bottom: 5px;
+	font-family: $font-special; @include rem(font-size, 11px); line-height: 120%; color: $color-Mine-Shaft; text-transform: lowercase;
+
+	&:before {
+		content: '';
+		display: inline-block;
+		margin-right: 5px;
+		width: 6px; height: 6px;
+		border-radius: 6px;
+		background-color: $chart-color-1;
+	}
+
+	&:nth-child(2) {
+		&:before {
+			background-color: $chart-color-2;
+		}
+	}
+
+	&:nth-child(3) {
+		&:before {
+			background-color: $chart-color-3;
+		}
+	}
+
+	&:nth-child(2) {
+		&:before {
+			background-color: $chart-color-4;
+		}
+	}
+
+	&:nth-child(5) {
+		&:before {
+			background-color: $chart-color-5;
+		}
+	}
+
+}
+
+.donut-chart-list__anchor {
+
+}

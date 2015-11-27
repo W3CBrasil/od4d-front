@@ -1,0 +1,82 @@
+///*------------------------------------*\
+//    #ARTICLE ENTRY
+//\*------------------------------------*/
+
+/* ENTRY WRAPPER
+========================================================================== */
+
+/* ENTRY
+========================================================================== */
+.article-entry {
+	@include rem(margin-bottom, 50px);
+	font-family: $font-primary; @include rem(font-size, 16px); color: $color-Cod-Gray;
+
+	//If there's no bio in the article
+	.article-wrapper--no-bio & {
+		margin-top: 0;
+	}
+
+	@include breakpoint(small) {
+		margin-top: 0;
+	}
+
+	a {
+		color: $main-color-articles; font-weight: bold;
+
+		.is-network-article & {
+			color: $main-color-news;
+		}
+
+		&:hover, &:focus {
+			text-decoration: underline;
+		}
+
+	}
+
+	p {
+		@include rem(margin-bottom, 25px);
+		line-height: 150%;
+	}
+
+	figure {
+		float: left;
+		margin-top: 5px; @include rem(margin-right, 25px); margin-left: -15%;
+		width: 60%;
+
+		@include breakpoint(exceptDesktop) {
+			margin-left: 0;
+		}
+
+		@include breakpoint(small) {
+			width: 100%;
+			text-align: center;
+		}
+
+		img {
+			margin-bottom: 10px;
+		}
+
+	}
+
+	figcaption {
+		@include rem(font-size, 13px); line-height: 130%; color: $color-Dove-Gray;
+	}
+
+	.article-entry__excerpt {
+		@include rem(margin-bottom, 30px);
+		@include rem(font-size, 20px); line-height: 130%;
+	}
+
+	.article-entry__origin {
+		display: block;
+		@include rem(margin-bottom, 30px); @include rem(padding, 7px 10px);
+		background-color: $main-color-news;
+		@include rem(font-size, 14px); color: $color-White;
+
+		a {
+			color: currentColor;
+		}
+
+	}
+
+}

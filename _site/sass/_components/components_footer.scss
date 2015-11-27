@@ -1,0 +1,57 @@
+///*------------------------------------*\
+//    #FOOTER
+//\*------------------------------------*/
+
+/* CONTAINER
+========================================================================== */
+.home-footer-container {
+	@include breakpoint(exceptDesktop) {
+		text-align: center;
+	}
+}
+
+/* LINKS LIST
+========================================================================== */
+.footer-links-list {
+	@include rem(margin-top, 20px);
+	@include breakpoint(exceptDesktop) {
+		float: none !important;
+	}
+}
+
+.footer-links-list__item {
+	position: relative;
+	display: inline-block;
+
+	font-family: $font-special; @include rem(font-size, 13px); color: $color-Mine-Shaft;
+
+	&:after {
+		content: '|';
+		color: currentColor;
+		@include rem(padding, 0 10px);
+	}
+
+	&:last-child {
+		&:after {
+			content: none;
+		}
+	}
+
+	@include breakpoint(exceptDesktop) {
+		display: block;
+		@include rem(margin-bottom, 10px);
+
+		&:after {
+			content: none;
+		}
+
+	}
+}
+
+.footer-links-list__anchor {
+
+}
+
+.footer-links-list__creative-commons-icon {
+	margin-right: 5px;
+}

@@ -1,0 +1,53 @@
+///*------------------------------------*\
+//    #ANCHOR BUTTONS
+//\*------------------------------------*/
+
+
+/* DEFAULT STYLES
+========================================================================== */
+.anchor-button {
+	@include rem(padding, 6px 10px 4px);
+	border:1px solid $color-Cod-Gray; border-radius:20px;
+	font-family: $font-special; color: $color-Cod-Gray; @include rem(font-size, 12px); line-height: 120%; text-transform: uppercase; font-weight: bold;
+	transition:background-color ease $basic-transition, color ease $basic-transition;
+
+	&:hover, &:focus {
+		text-decoration: none;
+		background-color: $color-Cod-Gray;
+		color: $color-Gallery;
+	}
+}
+
+
+
+/* COLOR VARIATIONS
+========================================================================== */
+.anchor-button--type-b {
+	background-color: $color-White;
+	border-color: transparent;
+	color: $color-Ochre;
+
+	&:hover, &:focus {
+		background-color: $color-Ochre;
+		border-color: $color-White;
+		color: $color-White;
+	}
+}
+
+.anchor-button--type-c {
+	background-color: $color-White;
+	border-color: transparent;
+	color: $color-Mine-Shaft;
+
+	&:hover, &:focus {
+		background-color: $color-Mine-Shaft;
+		border-color: $color-White;
+		color: $color-White;
+	}
+}
+
+/* SIZE VARIATIONS
+========================================================================== */
+.anchor-button--size-b {
+	@include rem(padding, 8px 17px 6px);
+}

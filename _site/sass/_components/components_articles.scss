@@ -1,0 +1,23 @@
+///*------------------------------------*\
+//    #ARTICLES
+//\*------------------------------------*/
+
+/* WRAPPER
+========================================================================== */
+.articles-wrapper {
+	@include rem(margin-bottom, 100px);
+
+	@include breakpoint(small) {
+		@include rem(margin-bottom, 70px);
+	}
+}
+
+/* LIST
+========================================================================== */
+.articles-list {
+	@include rem(margin-bottom, 20px);
+
+	@include breakpoint(small) {
+		@include rem(margin-bottom, 50px);
+	}
+}

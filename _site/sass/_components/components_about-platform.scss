@@ -1,0 +1,137 @@
+///*------------------------------------*\
+//    #ABOUT PLATFORM
+//\*------------------------------------*/
+
+/* VARIABLES
+========================================================================== */
+
+/* SECTION
+========================================================================== */
+
+/* WRAPPER
+========================================================================== */
+.about-platform-container {
+
+	@include breakpoint(small) {
+		display: none;
+	}
+
+}
+
+/* ABOUT HEADER
+========================================================================== */
+.about-platform__header {
+	@include rem(padding, 6px 15px);
+	background-color: $color-Mine-Shaft;
+}
+
+.about-platform__title {
+	display: inline-block;
+	font-family: $font-special; @include rem(font-size, 12px); font-weight: bold; line-height: 120%; color: $color-White; text-transform: uppercase;
+}
+
+.about-platform__close {
+	float: right;
+	@include rem(width, 20px);
+
+	&:hover, &:focus {
+		opacity: .7;
+	}
+
+}
+
+/* ABOUT LIST
+========================================================================== */
+.about-platform-list {
+	position: relative;
+	display: inline-block;
+	@include rem(margin-bottom, 90px); @include rem(padding, 30px 0);
+	width: 100%;
+	background-color: $color-White;
+	counter-reset: platform-list-itens;
+
+	&:before {
+		content: '';
+		position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+		display: block;
+		border: 1px solid $color-Silver;
+	}
+
+}
+
+.about-platform-list__anchor {
+	position: relative;
+	display: inline-block;
+
+	&:hover, &:focus {
+		opacity: .7;
+	}
+
+}
+
+.about-platform-list__item {
+	@include rem(padding-left, 10px);
+
+	@include breakpoint(small) {
+		@include rem(margin-bottom, 20px);
+	}
+
+	&:first-child {
+		@include rem(padding-left, 20px);
+
+		@include breakpoint(exceptDesktop) {
+			@include rem(padding-left, 14px); padding-bottom: 0;
+		}
+
+	}
+
+}
+
+.about-platform-list__number {
+	// display: inline-block;
+	position: relative;
+	float: left;
+	@include rem(width, 60px);
+	margin-right: 10px; @include rem(padding, 16px 0);
+	@include rem(font-size, 24px); font-weight: bold; text-align: center;
+	background-color: $color-Mine-Shaft;
+	color: $color-White;
+
+	 //FIX
+	 @media (min-width: $mediumSize) and (max-width: $maxMediumSize) {
+		@include rem(padding, 11px 0);
+		@include rem(width, 46px);
+	 }
+
+	&:after {
+		content: '';
+		position: absolute; bottom: -7px; right: 1px;
+		width: 0; height: 0;
+		border-style: solid; border-width: 7px 10px 0 0; border-color: $color-Black transparent transparent transparent;
+	}
+
+}
+
+.about-platform-list__info {
+	float: left;
+	@include rem(margin-bottom, 25px); @include rem(padding-top, 20px);
+	@include rem(width, 200px);
+
+	@include breakpoint(exceptDesktop) {
+		margin-bottom: 0;
+		@include rem(width, 155px);
+	}
+
+	@include breakpoint(small) {
+		width:80%;
+	}
+
+}
+
+.about-platform-list__title {
+	font-family: $font-special; @include rem(font-size, 16px); font-weight: bold; line-height: 130%; color: $color-Mine-Shaft; text-transform: uppercase;
+}
+
+.about-platform-list__text {
+	color: $color-Dove-Gray;
+}

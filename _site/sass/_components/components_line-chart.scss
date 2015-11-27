@@ -1,0 +1,51 @@
+///*------------------------------------*\
+//    #LINE CHARTS
+//\*------------------------------------*/
+
+
+/* LINE CHART
+========================================================================== */
+.line-chart-container {
+	width:250px; height:120px;
+
+	@include breakpoint(exceptDesktop) {
+		width:180px; height:110px;
+	}
+}
+
+/* LINE CHART TOOLTIP
+========================================================================== */
+.network-line-chart-tooltip {
+	position: absolute;
+	padding: 10px !important;
+	opacity: 0;
+	border-radius: 3px;
+	color: $color-White;
+	background: $color-Mine-Shaft;
+	transition: all .1s ease;
+	transform: translate(-50%, 0);
+	pointer-events: none;
+}
+
+.network-line-chart-tooltip__key {
+	display: inline-block;
+	width: 10px; height: 10px;
+}
+
+.network-line-chart-tooltip__title {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.network-line-chart-tooltip__items {
+	vertical-align: top;
+	margin-bottom: 5px;
+}
+
+.network-line-chart-tooltip__value {
+
+}
+
+.network-line-chart-tooltip__value-name {
+	font-weight: bold;
+}

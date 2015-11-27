@@ -1,0 +1,8 @@
+{% if site.env == 'dev' %}
+    <script src="{{ "js/lib/jquery-2.1.4.min.js" | prepend: page.baseurl }}"></script>
+    <script src="{{ "js/lib/require.js" | prepend: page.baseurl }}" data-main="{{ "js/main" | prepend: page.baseurl }}"></script>
+{% else %}
+    <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="href="{{ "js/lib/jquery-2.1.4.min.js" | prepend: page.baseurl }}"><\/script>')</script>
+    <script src="{{ "js/main.js" | prepend: page.baseurl }}"></script>
+{% endif %}

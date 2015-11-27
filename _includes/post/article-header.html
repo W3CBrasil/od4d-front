@@ -1,0 +1,19 @@
+<!-- ARTICLE HEADER -->
+<header class="article-header-wrapper">
+	<div class="content">
+		<div class="article-content article-header-content">
+			<h1 class="title title--type-3 article-header__title">Privacidade é tema de debate no 2º ENDA</h1>
+			<small class="article-header__info">
+				<a href="#" class="article-header__category"><strong>Dados abertos</strong></a>
+				<span class="article-header__time"><a href="#">01 de novembro de 2012</a></span>
+				<span>Por <a href="#"><strong>Yaso Córdova</strong></a> no <a href="#"><strong>OD4D Platform</strong></a></span>
+			</small>
+		</div>
+		{% if page.hasBio == true and page.isNetwork == true %}
+			{% include post/network-bio.html %}
+		{% elsif page.hasBio == true and page.isNetwork == false %}
+			{% include post/article-bio.html %}
+		{% endif %}
+	</div>
+</header>
+<!-- END ARTICLE HEADER -->
