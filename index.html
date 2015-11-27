@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]>    <html class="ie ie9 ie-lt10" lang="pt-BR"> <![endif]-->
+<!--[if gt IE 9]><!--><html lang="pt-BR"><!--<![endif]-->
+
+  <head>
+   	<meta charset="utf-8">
+
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  	<title>OD4D Network</title>
+  	<meta name="description" content="OD4D Network Description.
+" >
+	  <link href='https://fonts.googleapis.com/css?family=Quattrocento%7CRaleway:400,600,700' rel='stylesheet' type='text/css'>
+  	<link rel="stylesheet" href="css/main.css">
+  	<link rel="canonical" href="http://platform.od4d.org/">
+
+
+  	<script>
+
+  /*!
+      Injects SVG when the browser doesn't support SVG external references.
+      svg4everybody v2.0.0 | github.com/jonathantneal/svg4everybody
+  */
+  !function(a,b){"function"==typeof define&&define.amd?define([],function(){return a.svg4everybody=b()}):"object"==typeof exports?module.exports=b():a.svg4everybody=b()}(this,function(){
+function a(a,b){if(b){var c=!a.getAttribute("viewBox")&&b.getAttribute("viewBox"),d=document.createDocumentFragment(),e=b.cloneNode(!0);for(c&&a.setAttribute("viewBox",c);e.childNodes.length;)d.appendChild(e.firstChild);a.appendChild(d)}}function b(b){b.onreadystatechange=function(){if(4===b.readyState){var c=document.createElement("x");c.innerHTML=b.responseText,b.s.splice(0).map(function(b){a(b[0],c.querySelector("#"+b[1].replace(/(\W)/g,"\\$1")))})}},b.onreadystatechange()}function c(c){function d(){for(var c;c=e[0];){var j=c.parentNode;if(j&&/svg/i.test(j.nodeName)){var k=c.getAttribute("xlink:href");if(f&&(!g||g(k,j,c))){var l=k.split("#"),m=l[0],n=l[1];if(j.removeChild(c),m.length){var o=i[m]=i[m]||new XMLHttpRequest;o.s||(o.s=[],o.open("GET",m),o.send()),o.s.push([j,n]),b(o)}else a(j,document.getElementById(n))}}}h(d,17)}c=c||{};var e=document.getElementsByTagName("use"),f="polyfill"in c?c.polyfill:/\bEdge\/12\b|\bTrident\/[567]\b|\bVersion\/7.0 Safari\b/.test(navigator.userAgent)||(navigator.userAgent.match(/AppleWebKit\/(\d+)/)||[])[1]<537,g=c.validate,h=window.requestAnimationFrame||setTimeout,i={};f&&d()}return c});svg4everybody();
+
+	//Modernizer build looking for browsers that doesn't support CSS 3D transforms
+	!function(e,n,t){function r(e,n){return typeof e===n}function s(){var e,n,t,s,o,i,a;for(var f in w)if(w.hasOwnProperty(f)){if(e=[],n=w[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(t=0;t<n.options.aliases.length;t++)e.push(n.options.aliases[t].toLowerCase());for(s=r(n.fn,"function")?n.fn():n.fn,o=0;o<e.length;o++)i=e[o],a=i.split("."),1===a.length?Modernizr[a[0]]=s:(!Modernizr[a[0]]||Modernizr[a[0]]instanceof Boolean||(Modernizr[a[0]]=new Boolean(Modernizr[a[0]])),Modernizr[a[0]][a[1]]=s),y.push((s?"":"no-")+a.join("-"))}}function o(e){var n=C.className,t=Modernizr._config.classPrefix||"";if(b&&(n=n.baseVal),Modernizr._config.enableJSClass){var r=new RegExp("(^|\\s)"+t+"no-js(\\s|$)");n=n.replace(r,"$1"+t+"js$2")}Modernizr._config.enableClasses&&(n+=" "+t+e.join(" "+t),b?C.className.baseVal=n:C.className=n)}function i(){return"function"!=typeof n.createElement?n.createElement(arguments[0]):b?n.createElementNS.call(n,"http://www.w3.org/2000/svg",arguments[0]):n.createElement.apply(n,arguments)}function a(){var e=n.body;return e||(e=i(b?"svg":"body"),e.fake=!0),e}function f(e,t,r,s){var o,f,l,u,p="modernizr",d=i("div"),c=a();if(parseInt(r,10))for(;r--;)l=i("div"),l.id=s?s[r]:p+(r+1),d.appendChild(l);return o=i("style"),o.type="text/css",o.id="s"+p,(c.fake?c:d).appendChild(o),c.appendChild(d),o.styleSheet?o.styleSheet.cssText=e:o.appendChild(n.createTextNode(e)),d.id=p,c.fake&&(c.style.background="",c.style.overflow="hidden",u=C.style.overflow,C.style.overflow="hidden",C.appendChild(c)),f=t(d,e),c.fake?(c.parentNode.removeChild(c),C.style.overflow=u,C.offsetHeight):d.parentNode.removeChild(d),!!f}function l(e,n){return!!~(""+e).indexOf(n)}function u(e,n){return function(){return e.apply(n,arguments)}}function p(e,n,t){var s;for(var o in e)if(e[o]in n)return t===!1?e[o]:(s=n[e[o]],r(s,"function")?u(s,t||n):s);return!1}function d(e){return e.replace(/([a-z])-([a-z])/g,function(e,n,t){return n+t.toUpperCase()}).replace(/^-/,"")}function c(e){return e.replace(/([A-Z])/g,function(e,n){return"-"+n.toLowerCase()}).replace(/^ms-/,"-ms-")}function m(n,r){var s=n.length;if("CSS"in e&&"supports"in e.CSS){for(;s--;)if(e.CSS.supports(c(n[s]),r))return!0;return!1}if("CSSSupportsRule"in e){for(var o=[];s--;)o.push("("+c(n[s])+":"+r+")");return o=o.join(" or "),f("@supports ("+o+") { #modernizr { position: absolute; } }",function(e){return"absolute"==getComputedStyle(e,null).position})}return t}function h(e,n,s,o){function a(){u&&(delete k.style,delete k.modElem)}if(o=r(o,"undefined")?!1:o,!r(s,"undefined")){var f=m(e,s);if(!r(f,"undefined"))return f}for(var u,p,c,h,v,g=["modernizr","tspan"];!k.style;)u=!0,k.modElem=i(g.shift()),k.style=k.modElem.style;for(c=e.length,p=0;c>p;p++)if(h=e[p],v=k.style[h],l(h,"-")&&(h=d(h)),k.style[h]!==t){if(o||r(s,"undefined"))return a(),"pfx"==n?h:!0;try{k.style[h]=s}catch(y){}if(k.style[h]!=v)return a(),"pfx"==n?h:!0}return a(),!1}function v(e,n,t,s,o){var i=e.charAt(0).toUpperCase()+e.slice(1),a=(e+" "+E.join(i+" ")+i).split(" ");return r(n,"string")||r(n,"undefined")?h(a,n,s,o):(a=(e+" "+N.join(i+" ")+i).split(" "),p(a,n,t))}function g(e,n,r){return v(e,t,t,n,r)}var y=[],C=n.documentElement,w=[],S={_version:"3.2.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var t=this;setTimeout(function(){n(t[e])},0)},addTest:function(e,n,t){w.push({name:e,fn:n,options:t})},addAsyncTest:function(e){w.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=S,Modernizr=new Modernizr;var x="CSS"in e&&"supports"in e.CSS,_="supportsCSS"in e;Modernizr.addTest("supports",x||_);var b="svg"===C.nodeName.toLowerCase(),P=S.testStyles=f,z="Moz O ms Webkit",E=S._config.usePrefixes?z.split(" "):[];S._cssomPrefixes=E;var N=S._config.usePrefixes?z.toLowerCase().split(" "):[];S._domPrefixes=N;var T={elem:i("modernizr")};Modernizr._q.push(function(){delete T.elem});var k={style:T.elem.style};Modernizr._q.unshift(function(){delete k.style}),S.testAllProps=v,S.testAllProps=g,Modernizr.addTest("csstransforms3d",function(){var e=!!g("perspective","1px",!0),n=Modernizr._config.usePrefixes;if(e&&(!n||"webkitPerspective"in C.style)){var t,r="#modernizr{width:0;height:0}";Modernizr.supports?t="@supports (perspective: 1px)":(t="@media (transform-3d)",n&&(t+=",(-webkit-transform-3d)")),t+="{#modernizr{width:7px;height:18px;margin:0;padding:0;border:0}}",P(r+t,function(n){e=7===n.offsetWidth&&18===n.offsetHeight})}return e}),s(),o(y),delete S.addTest,delete S.addAsyncTest;for(var j=0;j<Modernizr._q.length;j++)Modernizr._q[j]();e.Modernizr=Modernizr}(window,document);
+
+/*! Picturefill - v3.0.1 - 2015-09-30
+ * http://scottjehl.github.io/picturefill
+ * Copyright (c) 2015 https://github.com/scottjehl/picturefill/blob/master/Authors.txt; Licensed MIT
+ */
+!function(a){var b=navigator.userAgent;a.HTMLPictureElement&&/ecko/.test(b)&&b.match(/rv\:(\d+)/)&&RegExp.$1<41&&addEventListener("resize",function(){var b,c=document.createElement("source"),d=function(a){var b,d,e=a.parentNode;"PICTURE"===e.nodeName.toUpperCase()?(b=c.cloneNode(),e.insertBefore(b,e.firstElementChild),setTimeout(function(){e.removeChild(b)})):(!a._pfLastSize||a.offsetWidth>a._pfLastSize)&&(a._pfLastSize=a.offsetWidth,d=a.sizes,a.sizes+=",100vw",setTimeout(function(){a.sizes=d}))},e=function(){var a,b=document.querySelectorAll("picture > img, img[srcset][sizes]");for(a=0;a<b.length;a++)d(b[a])},f=function(){clearTimeout(b),b=setTimeout(e,99)},g=a.matchMedia&&matchMedia("(orientation: landscape)"),h=function(){f(),g&&g.addListener&&g.addListener(f)};return c.srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",/^[c|i]|d$/.test(document.readyState||"")?h():document.addEventListener("DOMContentLoaded",h),f}())}(window),function(a,b,c){"use strict";function d(a){return" "===a||"  "===a||"\n"===a||"\f"===a||"\r"===a}function e(b,c){var d=new a.Image;return d.onerror=function(){z[b]=!1,aa()},d.onload=function(){z[b]=1===d.width,aa()},d.src=c,"pending"}function f(){L=!1,O=a.devicePixelRatio,M={},N={},s.DPR=O||1,P.width=Math.max(a.innerWidth||0,y.clientWidth),P.height=Math.max(a.innerHeight||0,y.clientHeight),P.vw=P.width/100,P.vh=P.height/100,r=[P.height,P.width,O].join("-"),P.em=s.getEmValue(),P.rem=P.em}function g(a,b,c,d){var e,f,g,h;return"saveData"===A.algorithm?a>2.7?h=c+1:(f=b-c,e=Math.pow(a-.6,1.5),g=f*e,d&&(g+=.1*e),h=a+g):h=c>1?Math.sqrt(a*b):a,h>c}function h(a){var b,c=s.getSet(a),d=!1;"pending"!==c&&(d=r,c&&(b=s.setRes(c),s.applySetCandidate(b,a))),a[s.ns].evaled=d}function i(a,b){return a.res-b.res}function j(a,b,c){var d;return!c&&b&&(c=a[s.ns].sets,c=c&&c[c.length-1]),d=k(b,c),d&&(b=s.makeUrl(b),a[s.ns].curSrc=b,a[s.ns].curCan=d,d.res||_(d,d.set.sizes)),d}function k(a,b){var c,d,e;if(a&&b)for(e=s.parseSet(b),a=s.makeUrl(a),c=0;c<e.length;c++)if(a===s.makeUrl(e[c].url)){d=e[c];break}return d}function l(a,b){var c,d,e,f,g=a.getElementsByTagName("source");for(c=0,d=g.length;d>c;c++)e=g[c],e[s.ns]=!0,f=e.getAttribute("srcset"),f&&b.push({srcset:f,media:e.getAttribute("media"),type:e.getAttribute("type"),sizes:e.getAttribute("sizes")})}function m(a,b){function c(b){var c,d=b.exec(a.substring(m));return d?(c=d[0],m+=c.length,c):void 0}function e(){var a,c,d,e,f,i,j,k,l,m=!1,o={};for(e=0;e<h.length;e++)f=h[e],i=f[f.length-1],j=f.substring(0,f.length-1),k=parseInt(j,10),l=parseFloat(j),W.test(j)&&"w"===i?((a||c)&&(m=!0),0===k?m=!0:a=k):X.test(j)&&"x"===i?((a||c||d)&&(m=!0),0>l?m=!0:c=l):W.test(j)&&"h"===i?((d||c)&&(m=!0),0===k?m=!0:d=k):m=!0;m||(o.url=g,a&&(o.w=a),c&&(o.d=c),d&&(o.h=d),d||c||a||(o.d=1),1===o.d&&(b.has1x=!0),o.set=b,n.push(o))}function f(){for(c(S),i="",j="in descriptor";;){if(k=a.charAt(m),"in descriptor"===j)if(d(k))i&&(h.push(i),i="",j="after descriptor");else{if(","===k)return m+=1,i&&h.push(i),void e();if("("===k)i+=k,j="in parens";else{if(""===k)return i&&h.push(i),void e();i+=k}}else if("in parens"===j)if(")"===k)i+=k,j="in descriptor";else{if(""===k)return h.push(i),void e();i+=k}else if("after descriptor"===j)if(d(k));else{if(""===k)return void e();j="in descriptor",m-=1}m+=1}}for(var g,h,i,j,k,l=a.length,m=0,n=[];;){if(c(T),m>=l)return n;g=c(U),h=[],","===g.slice(-1)?(g=g.replace(V,""),e()):f()}}function n(a){function b(a){function b(){f&&(g.push(f),f="")}function c(){g[0]&&(h.push(g),g=[])}for(var e,f="",g=[],h=[],i=0,j=0,k=!1;;){if(e=a.charAt(j),""===e)return b(),c(),h;if(k){if("*"===e&&"/"===a[j+1]){k=!1,j+=2,b();continue}j+=1}else{if(d(e)){if(a.charAt(j-1)&&d(a.charAt(j-1))||!f){j+=1;continue}if(0===i){b(),j+=1;continue}e=" "}else if("("===e)i+=1;else if(")"===e)i-=1;else{if(","===e){b(),c(),j+=1;continue}if("/"===e&&"*"===a.charAt(j+1)){k=!0,j+=2;continue}}f+=e,j+=1}}}function c(a){return k.test(a)&&parseFloat(a)>=0?!0:l.test(a)?!0:"0"===a||"-0"===a||"+0"===a?!0:!1}var e,f,g,h,i,j,k=/^(?:[+-]?[0-9]+|[0-9]*\.[0-9]+)(?:[eE][+-]?[0-9]+)?(?:ch|cm|em|ex|in|mm|pc|pt|px|rem|vh|vmin|vmax|vw)$/i,l=/^calc\((?:[0-9a-z \.\+\-\*\/\(\)]+)\)$/i;for(f=b(a),g=f.length,e=0;g>e;e++)if(h=f[e],i=h[h.length-1],c(i)){if(j=i,h.pop(),0===h.length)return j;if(h=h.join(" "),s.matchesMedia(h))return j}return"100vw"}b.createElement("picture");var o,p,q,r,s={},t=function(){},u=b.createElement("img"),v=u.getAttribute,w=u.setAttribute,x=u.removeAttribute,y=b.documentElement,z={},A={algorithm:""},B="data-pfsrc",C=B+"set",D=navigator.userAgent,E=/rident/.test(D)||/ecko/.test(D)&&D.match(/rv\:(\d+)/)&&RegExp.$1>35,F="currentSrc",G=/\s+\+?\d+(e\d+)?w/,H=/(\([^)]+\))?\s*(.+)/,I=a.picturefillCFG,J="position:absolute;left:0;visibility:hidden;display:block;padding:0;border:none;font-size:1em;width:1em;overflow:hidden;clip:rect(0px, 0px, 0px, 0px)",K="font-size:100%!important;",L=!0,M={},N={},O=a.devicePixelRatio,P={px:1,"in":96},Q=b.createElement("a"),R=!1,S=/^[ \t\n\r\u000c]+/,T=/^[, \t\n\r\u000c]+/,U=/^[^ \t\n\r\u000c]+/,V=/[,]+$/,W=/^\d+$/,X=/^-?(?:[0-9]+|[0-9]*\.[0-9]+)(?:[eE][+-]?[0-9]+)?$/,Y=function(a,b,c,d){a.addEventListener?a.addEventListener(b,c,d||!1):a.attachEvent&&a.attachEvent("on"+b,c)},Z=function(a){var b={};return function(c){return c in b||(b[c]=a(c)),b[c]}},$=function(){var a=/^([\d\.]+)(em|vw|px)$/,b=function(){for(var a=arguments,b=0,c=a[0];++b in a;)c=c.replace(a[b],a[++b]);return c},c=Z(function(a){return"return "+b((a||"").toLowerCase(),/\band\b/g,"&&",/,/g,"||",/min-([a-z-\s]+):/g,"e.$1>=",/max-([a-z-\s]+):/g,"e.$1<=",/calc([^)]+)/g,"($1)",/(\d+[\.]*[\d]*)([a-z]+)/g,"($1 * e.$2)",/^(?!(e.[a-z]|[0-9\.&=|><\+\-\*\(\)\/])).*/gi,"")+";"});return function(b,d){var e;if(!(b in M))if(M[b]=!1,d&&(e=b.match(a)))M[b]=e[1]*P[e[2]];else try{M[b]=new Function("e",c(b))(P)}catch(f){}return M[b]}}(),_=function(a,b){return a.w?(a.cWidth=s.calcListLength(b||"100vw"),a.res=a.w/a.cWidth):a.res=a.d,a},aa=function(a){var c,d,e,f=a||{};if(f.elements&&1===f.elements.nodeType&&("IMG"===f.elements.nodeName.toUpperCase()?f.elements=[f.elements]:(f.context=f.elements,f.elements=null)),c=f.elements||s.qsa(f.context||b,f.reevaluate||f.reselect?s.sel:s.selShort),e=c.length){for(s.setupRun(f),R=!0,d=0;e>d;d++)s.fillImg(c[d],f);s.teardownRun(f)}};o=a.console&&console.warn?function(a){console.warn(a)}:t,F in u||(F="src"),z["image/jpeg"]=!0,z["image/gif"]=!0,z["image/png"]=!0,z["image/svg+xml"]=b.implementation.hasFeature("http://wwwindow.w3.org/TR/SVG11/feature#Image","1.1"),s.ns=("pf"+(new Date).getTime()).substr(0,9),s.supSrcset="srcset"in u,s.supSizes="sizes"in u,s.supPicture=!!a.HTMLPictureElement,s.supSrcset&&s.supPicture&&!s.supSizes&&!function(a){u.srcset="data:,a",a.src="data:,a",s.supSrcset=u.complete===a.complete,s.supPicture=s.supSrcset&&s.supPicture}(b.createElement("img")),s.selShort="picture>img,img[srcset]",s.sel=s.selShort,s.cfg=A,s.supSrcset&&(s.sel+=",img["+C+"]"),s.DPR=O||1,s.u=P,s.types=z,q=s.supSrcset&&!s.supSizes,s.setSize=t,s.makeUrl=Z(function(a){return Q.href=a,Q.href}),s.qsa=function(a,b){return a.querySelectorAll(b)},s.matchesMedia=function(){return a.matchMedia&&(matchMedia("(min-width: 0.1em)")||{}).matches?s.matchesMedia=function(a){return!a||matchMedia(a).matches}:s.matchesMedia=s.mMQ,s.matchesMedia.apply(this,arguments)},s.mMQ=function(a){return a?$(a):!0},s.calcLength=function(a){var b=$(a,!0)||!1;return 0>b&&(b=!1),b},s.supportsType=function(a){return a?z[a]:!0},s.parseSize=Z(function(a){var b=(a||"").match(H);return{media:b&&b[1],length:b&&b[2]}}),s.parseSet=function(a){return a.cands||(a.cands=m(a.srcset,a)),a.cands},s.getEmValue=function(){var a;if(!p&&(a=b.body)){var c=b.createElement("div"),d=y.style.cssText,e=a.style.cssText;c.style.cssText=J,y.style.cssText=K,a.style.cssText=K,a.appendChild(c),p=c.offsetWidth,a.removeChild(c),p=parseFloat(p,10),y.style.cssText=d,a.style.cssText=e}return p||16},s.calcListLength=function(a){if(!(a in N)||A.uT){var b=s.calcLength(n(a));N[a]=b?b:P.width}return N[a]},s.setRes=function(a){var b;if(a){b=s.parseSet(a);for(var c=0,d=b.length;d>c;c++)_(b[c],a.sizes)}return b},s.setRes.res=_,s.applySetCandidate=function(a,b){if(a.length){var c,d,e,f,h,k,l,m,n,o=b[s.ns],p=s.DPR;if(k=o.curSrc||b[F],l=o.curCan||j(b,k,a[0].set),l&&l.set===a[0].set&&(n=E&&!b.complete&&l.res-.1>p,n||(l.cached=!0,l.res>=p&&(h=l))),!h)for(a.sort(i),f=a.length,h=a[f-1],d=0;f>d;d++)if(c=a[d],c.res>=p){e=d-1,h=a[e]&&(n||k!==s.makeUrl(c.url))&&g(a[e].res,c.res,p,a[e].cached)?a[e]:c;break}h&&(m=s.makeUrl(h.url),o.curSrc=m,o.curCan=h,m!==k&&s.setSrc(b,h),s.setSize(b))}},s.setSrc=function(a,b){var c;a.src=b.url,"image/svg+xml"===b.set.type&&(c=a.style.width,a.style.width=a.offsetWidth+1+"px",a.offsetWidth+1&&(a.style.width=c))},s.getSet=function(a){var b,c,d,e=!1,f=a[s.ns].sets;for(b=0;b<f.length&&!e;b++)if(c=f[b],c.srcset&&s.matchesMedia(c.media)&&(d=s.supportsType(c.type))){"pending"===d&&(c=d),e=c;break}return e},s.parseSets=function(a,b,d){var e,f,g,h,i=b&&"PICTURE"===b.nodeName.toUpperCase(),j=a[s.ns];(j.src===c||d.src)&&(j.src=v.call(a,"src"),j.src?w.call(a,B,j.src):x.call(a,B)),(j.srcset===c||d.srcset||!s.supSrcset||a.srcset)&&(e=v.call(a,"srcset"),j.srcset=e,h=!0),j.sets=[],i&&(j.pic=!0,l(b,j.sets)),j.srcset?(f={srcset:j.srcset,sizes:v.call(a,"sizes")},j.sets.push(f),g=(q||j.src)&&G.test(j.srcset||""),g||!j.src||k(j.src,f)||f.has1x||(f.srcset+=", "+j.src,f.cands.push({url:j.src,d:1,set:f}))):j.src&&j.sets.push({srcset:j.src,sizes:null}),j.curCan=null,j.curSrc=c,j.supported=!(i||f&&!s.supSrcset||g),h&&s.supSrcset&&!j.supported&&(e?(w.call(a,C,e),a.srcset=""):x.call(a,C)),j.supported&&!j.srcset&&(!j.src&&a.src||a.src!==s.makeUrl(j.src))&&(null===j.src?a.removeAttribute("src"):a.src=j.src),j.parsed=!0},s.fillImg=function(a,b){var c,d=b.reselect||b.reevaluate;a[s.ns]||(a[s.ns]={}),c=a[s.ns],(d||c.evaled!==r)&&((!c.parsed||b.reevaluate)&&s.parseSets(a,a.parentNode,b),c.supported?c.evaled=r:h(a))},s.setupRun=function(){(!R||L||O!==a.devicePixelRatio)&&f()},s.supPicture?(aa=t,s.fillImg=t):!function(){var c,d=a.attachEvent?/d$|^c/:/d$|^c|^i/,e=function(){var a=b.readyState||"";f=setTimeout(e,"loading"===a?200:999),b.body&&(s.fillImgs(),c=c||d.test(a),c&&clearTimeout(f))},f=setTimeout(e,b.body?9:99),g=function(a,b){var c,d,e=function(){var f=new Date-d;b>f?c=setTimeout(e,b-f):(c=null,a())};return function(){d=new Date,c||(c=setTimeout(e,b))}},h=y.clientHeight,i=function(){L=Math.max(a.innerWidth||0,y.clientWidth)!==P.width||y.clientHeight!==h,h=y.clientHeight,L&&s.fillImgs()};Y(a,"resize",g(i,99)),Y(b,"readystatechange",e)}(),s.picturefill=aa,s.fillImgs=aa,s.teardownRun=t,aa._=s,a.picturefillCFG={pf:s,push:function(a){var b=a.shift();"function"==typeof s[b]?s[b].apply(s,a):(A[b]=a[0],R&&s.fillImgs({reselect:!0}))}};for(;I&&I.length;)a.picturefillCFG.push(I.shift());a.picturefill=aa,"object"==typeof module&&"object"==typeof module.exports?module.exports=aa:"function"==typeof define&&define.amd&&define("picturefill",function(){return aa}),s.supPicture||(z["image/webp"]=e("image/webp","data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA=="))}(window,document);
+
+  	</script>
+</head>
+
+
+  <body data-language="pt-br">
+    <!-- NAVIGATION -->
+<!-- SKIP LINKS -->
+<ul class="skip-links" id="js-skip-links">
+	<li class="skip-links__item"><a class="visuallyhidden skip-links__anchor" href="#js-navigation">Ir para o menu do site</a></li>
+	<li class="skip-links__item"><a class="visuallyhidden skip-links__anchor" href="#main">Ir para o conteúdo do site</a></li>
+</ul>
+<!-- END SKIP LINKS -->
+<div class="section navigation-wrapper">
+	<div class="content navigation-content">
+		
+		<div class="navigation-container">
+			<button id="js-navigation-toogler" class="navigation-toogler" aria-expanded="false" aria-controls="js-navigation" aria-label="Abrir o menu de navegação" type="button" title="Abrir o menu de navegação">
+				<span class="navigation-toogler__burguer"></span><span class="navigation-toogler__text">menu</span>
+			</button>
+			<nav class="navigation" id="js-navigation">
+				<ul class="navigation-list">
+					<li class="navigation-list__item">
+						<a class="navigation-list__anchor" href="#">
+							<span class="navigation-list__item-name">Dados abertos</span>
+							<svg class="navigation-list__icon-arrow icon icon-arrow" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-arrow"></use></svg>
+						</a>
+						<div class="navigation-sub-list">
+							<ul class="navigation-sub-list__list">
+								<li class="navigation-sub-list__item">
+									<a href="" class="navigation-sub-list__anchor">Conceitos básicos</a>
+								</li>
+								<li class="navigation-sub-list__item">
+									<a href="" class="navigation-sub-list__anchor">O que são dados abertos</a>
+								</li>
+								<li class="navigation-sub-list__item">
+									<a href="" class="navigation-sub-list__anchor">Material de referência</a>
+								</li>
+								<li class="navigation-sub-list__item">
+									<a href="" class="navigation-sub-list__anchor">Glossário</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="navigation-list__item">
+						<a class="navigation-list__anchor" href="#">
+							<span class="navigation-list__item-name">Exemplos práticos</span>
+							<svg class="navigation-list__icon-arrow icon icon-arrow" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-arrow"></use></svg>
+						</a>
+						<div class="navigation-sub-list">
+							<ul class="navigation-sub-list__list">
+								<li class="navigation-sub-list__item">
+									<a href="" class="navigation-sub-list__anchor">Cases</a>
+								</li>
+								<li class="navigation-sub-list__item">
+									<a href="" class="navigation-sub-list__anchor">Artigos</a>
+								</li>
+								<li class="navigation-sub-list__item">
+									<a href="" class="navigation-sub-list__anchor">Entrevistas</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="navigation-list__item">
+						<a class="navigation-list__anchor" href="http://www.twitter.com">
+							<span class="navigation-list__item-name">Notícias</span>
+							<svg class="navigation-list__icon-arrow icon icon-arrow" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-arrow"></use></svg>
+						</a>
+						<div class="navigation-sub-list">
+							<ul class="navigation-sub-list__list">
+								<li class="navigation-sub-list__item">
+									<a href="" class="navigation-sub-list__anchor">Últimas notícias</a>
+								</li>
+								<li class="navigation-sub-list__item">
+									<a href="" class="navigation-sub-list__anchor">Eventos</a>
+								</li>
+								<li class="navigation-sub-list__item">
+									<a href="" class="navigation-sub-list__anchor">Conferências</a>
+								</li>
+								<li class="navigation-sub-list__item">
+									<a href="" class="navigation-sub-list__anchor">Cursos</a>
+								</li>
+								<li class="navigation-sub-list__item">
+									<a href="" class="navigation-sub-list__anchor">Concursos</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="navigation-list__item">
+						<a class="navigation-list__anchor" href="#" data-external="true">
+							<span class="navigation-list__item-name">Como participar</span>
+						</a>
+					</li>
+					<li class="navigation-list__item">
+						<a class="navigation-list__anchor" href="#" data-external="true">
+							<span class="navigation-list__item-name">Sobre a plataforma</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="flow-opposite">
+			<!-- LANGUAGES LIST -->
+<ul class="languages-list">
+	<li class="languages-list__item">
+		<span class="languages-list__anchor is-current">
+			<svg class="icon icon-languages"><use xlink:href="img/icons/icons.svg#icon-language--pt-br"></use></svg>
+		</span>
+	</li>
+	<li class="languages-list__item">
+		<a href="#" class="languages-list__anchor" title="Visit OD4D Network in English">
+			<span class="visuallyhidden">Visit OD4D Network in English</span><svg class="icon icon-languages"><use xlink:href="img/icons/icons.svg#icon-language--en-us"></use></svg>
+		</a>
+	</li>
+	<li class="languages-list__item">
+		<a href="#" class="languages-list__anchor" title="Visite OD4D Network en español">
+			<span class="visuallyhidden">Visite OD4D Network en español</span><svg class="icon icon-languages"><use xlink:href="img/icons/icons.svg#icon-language--es-es"></use></svg>
+		</a>
+	</li>
+</ul>
+<!-- END LANGUAGES LIST -->
+			<div class="header-login-container">
+				<a href="#" class="anchor-button">Login</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- END NAVIGATION -->
+<!-- HOME HEADER -->
+<header class="section home-header-section">
+	<div class="home-header-wrapper">
+		<div class="content">
+			<h1 class="col-5-12 home-header-wrapper__logo-container"><img class="home-header-wrapper__logo" src="img/logos/od4d-logo.svg" alt="OD4D Network"></h1>
+			<div class="col-5-12 last flow-opposite">
+				<p class="home-header__intro"><strong class="home-header__intro--highlight">Lorem ipsum dolor sit amet</strong>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
+				<form class="col-4-12 last flow-opposite home-search-container" action="#" role="search" method="get">
+					<label for="search" class="visuallyhidden">Busque no site:</label>
+					<input id="search" class="home-search-container__search" name="search" type="search" placeholder="Busca" required />
+					<input type="submit" value="enviar" class="home-search-container__submit" />
+				</form>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- END HOME HEADER -->
+<main role="main" id="main">
+    <div class="section section--1">
+        <!-- ABOUT PLATFORM -->
+<section class="section">
+	<div class="content">
+		<div id="js-about-platform" class="about-platform-container">
+			<div class="about-platform__header">
+				<h2 class="about-platform__title">Entenda a plataforma</h2>
+				<button class="about-platform__close" title="Fechar"><span class="visuallyhidden">Fechar</span><svg class="icon icon-close"><use xlink:href="img/icons/icons.svg#icon-close"></use></svg></button>
+			</div>
+			<ol class="about-platform-list">
+				<li class="col-4-12 about-platform-list__item">
+					<a href="#" class="about-platform-list__anchor">
+						<span class="about-platform-list__number">1</span>
+						<div class="about-platform-list__info">
+							<h3 class="about-platform-list__title">Entenda</h3>
+							<p class="about-platform-list__text">Entenda os conceitos de Dados Abertos e o que exatamente eles podem fazer por você.</p>
+						</div>
+					</a>
+				</li>
+				<li class="col-4-12 about-platform-list__item">
+					<a href="#" class="about-platform-list__anchor">
+						<span class="about-platform-list__number">2</span>
+						<div class="about-platform-list__info">
+							<h3 class="about-platform-list__title">Descubra</h3>
+							<p class="about-platform-list__text">São mais de 236 iniciativas em nossa plataforma, entre artigos, notícias, entrevistas e mais.</p>
+						</div>
+					</a>
+				</li>
+				<li class="col-4-12 last about-platform-list__item">
+					<a href="#" class="about-platform-list__anchor">
+						<span class="about-platform-list__number">3</span>
+						<div class="about-platform-list__info">
+							<h3 class="about-platform-list__title">Participe</h3>
+							<p class="about-platform-list__text">Seja parte dessa rede! Você pode abrir seus dados ou então se tornar um contribuidor.</p>
+						</div>
+					</a>
+				</li>
+			</ol>
+		</div>
+	</div>
+</section>
+<!-- END ABOUT PLATFORM -->
+        <!-- LATEST NEWS -->
+<section class="content latest-news-container">
+	<div class="latest-news-container__header">
+		<h2 class="title">Últimas notícias</h2>
+		<!-- LINKED DATA TOGGLER -->
+<div class="linked-data-toggler-container flow-opposite">
+	<strong class="linked-data-toggler__text">Linked data</strong>
+	<button class="linked-data-toggler__tooltip">
+		<svg class="icon icon-question-mark"><use xlink:href="img/icons/icons.svg#icon-question"></use></svg>
+		<span class="linked-data-toggler__tooltip-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</span>
+	</button>
+	<button id="js-linked-data-toggler__toggler" data-linked-data-on="true" class="linked-data-toggler__toggler" role="switch checkbox" aria-label="Alternar Linked Data">
+		<span class="linked-data-toggler__toggler-button-wrapper">
+			<span class='linked-data-toggler__toggler-button-holder'><svg class="linked-data-toggler__toggler-button icon icon-data-burger"><use xlink:href="img/icons/icons.svg#icon-data-burger"></use></svg></span>
+			<span class="linked-data-toggler__toggler-text">on</span>
+		</span>
+	</button>
+</div>
+<!-- END LINKED DATA TOGGLER -->
+	</div>
+
+	<div id="js-article-cards__list" class="article-cards__list">
+		<!--FIRST ROW -->
+
+<!--FIRST COLUMN -->
+<div class="col-9-12">
+
+	<article class="article-cards__card article-cards__card--news article-cards__card--highlight article-cards__card--small col-9-12">
+		<div class="article-cards__holder">
+			<div class="article-cards__content article-cards__content--front">
+				<div class="article-cards__article">
+					<div class="article-cards__content-wrapper">
+						<a href="category/" class="article-cards__category">Transparência</a>
+						<header class="article-cards__header">
+							<span class="article-cards__card-highlight-icon"><svg class="icon icon-card-highlight" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-card-highlight"></use></svg></span>
+							<a href="articles/"><h3 class="article-cards__title">Acesso à Informação: CGU manda pedido de planilhas da CAPES para a gaveta</h3></a>
+							<span class="article-cards__date">Por <a href="author/">Jorge Machado</a> no <a href="category/" class="article-cards__site">Open Knowledge Brasil</a></span>
+						</header>
+						<a href="articles/" class="article-cards__excerpt-anchor">
+							<p class="article-cards__excerpt">O orçamento público deve expressar o planejamento das ações para atender às necessidades e prioridades da população.</p>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="article-cards__content article-cards__content--back">
+				<ul class="article-cards__connections-list">
+					<li class="article-cards__connections-item">
+						<a href="category/" class="article-cards__connections-anchor">Veja todas as notícias a respeito de <strong>Privacidade &amp; Segurança</strong></a>
+					</li>
+					<li class="article-cards__connections-item">
+						<a href="author/" class="article-cards__connections-anchor">Veja todas as notícias por <strong>Larissa Brainer da Silva Souza</strong></a>
+					</li>
+					<li class="article-cards__connections-item">
+						<a href="category/" class="article-cards__connections-anchor">Veja todas as publicadas no <strong>Open Knowledge Brasil</strong></a>
+					</li>
+					<li class="article-cards__connections-item">
+						<a href="category/" class="article-cards__connections-anchor">Ver todas em <strong>destaque</strong></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<button class="article-cards__connections-toggler"><span class="visuallyhidden">ver ligações</span><svg class="icon icon-rotate" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-rotate"></use></svg></button>
+	</article>
+
+	<article class="article-cards__card col-6-12">
+		<div class="article-cards__holder">
+			<div class="article-cards__content article-cards__content--front">
+				<div class="article-cards__article">
+					<a href="articles/">
+						<img class="article-cards__thumb" src="img/examples/card-image-wide-2.jpg" alt="alt da imagem" />
+					</a>
+					<div class="article-cards__content-wrapper">
+						<a href="category/" class="article-cards__category">Transparência</a>
+						<header class="article-cards__header">
+							<a href="articles/"><h3 class="article-cards__title">Acesso à Informação: CGU manda pedido de planilhas da CAPES para a gaveta</h3></a>
+							<span class="article-cards__date">05 de novembro de 2012</span>
+						</header>
+						<a href="articles/">
+							<p class="article-cards__excerpt">O orçamento público deve expressar o planejamento das ações para atender às necessidades e prioridades da população.</p>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="article-cards__content article-cards__content--back">
+				<ul class="article-cards__connections-list">
+					<li class="article-cards__connections-item">
+						<a href="category/" class="article-cards__connections-anchor">Veja todas as notícias a respeito de <strong>Transparência</strong></a>
+					</li>
+					<li class="article-cards__connections-item">
+						<a href="category/" class="article-cards__connections-anchor">Veja todas as notícias na data <strong>05 de novembro de 2012</strong></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<button class="article-cards__connections-toggler"><span class="visuallyhidden">ver ligações</span><svg class="icon icon-rotate" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-rotate"></use></svg></button>
+	</article>
+
+	<article class="article-cards__card article-cards__card--news col-3-12">
+		<div class="article-cards__holder">
+			<div class="article-cards__content article-cards__content--front">
+				<div class="article-cards__article">
+					<div class="article-cards__content-wrapper">
+						<a href="category/" class="article-cards__category">Dados abertos</a>
+						<header class="article-cards__header">
+							<a href="articles/"><h3 class="article-cards__title">São Carlos (SP) terá mesa redonda para marcar Open Data Day</h3></a>
+							<span class="article-cards__date">Por <a href="author/">Larissa Brainer</a> no <a href="category/" class="article-cards__site">Open Knowledge Brasil</a></span>
+						</header>
+						<a href="articles/">
+							<p class="article-cards__excerpt">Para marcar o Dia Internacional de Dados Abertos, a cidade de São Carlos (SP) recebe uma mesa redonda sobre o assunto, no próximo sábado (21), a partir das 9h.</p>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="article-cards__content article-cards__content--back">
+				<ul class="article-cards__connections-list">
+					<li class="article-cards__connections-item">
+						<a href="category/" class="article-cards__connections-anchor">Veja todas as notícias a respeito de <strong>Privacidade &amp; Segurança</strong></a>
+					</li>
+					<li class="article-cards__connections-item">
+						<a href="author/" class="article-cards__connections-anchor">Veja todas as notícias por <strong>Larissa Brainer da Silva Souza</strong></a>
+					</li>
+					<li class="article-cards__connections-item">
+						<a href="category/" class="article-cards__connections-anchor">Veja todas as publicadas no <strong>Open Knowledge Brasil</strong></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<button class="article-cards__connections-toggler"><span class="visuallyhidden">ver ligações</span><svg class="icon icon-rotate" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-rotate"></use></svg></button>
+	</article>
+
+</div>
+<!--END FIRST COLUMN -->
+
+<!-- SECOND COLUMN -->
+<div class="col-3-12 last">
+	<article class="article-cards__card col-3-12">
+		<div class="article-cards__holder">
+			<div class="article-cards__content article-cards__content--front">
+				<div class="article-cards__article">
+					<a href="articles/">
+						<img class="article-cards__thumb" src="img/examples/card-image-1.jpg" alt="alt da imagem" />
+					</a>
+					<div class="article-cards__content-wrapper">
+						<a href="category/" class="article-cards__category">Materiais de referência</a>
+						<header class="article-cards__header">
+							<a href="articles/"><h3 class="article-cards__title">ENDA: Educação em Dados Abertos</h3></a>
+							<span class="article-cards__date">25 de fevereiro de 2014</span>
+						</header>
+						<a href="articles/">
+							<p class="article-cards__excerpt">A cidade de São Carlos (SP) recebe uma mesa redonda sobre dados abertos.</p>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="article-cards__content article-cards__content--back">
+				<ul class="article-cards__connections-list">
+					<li class="article-cards__connections-item">
+						<a href="category/" class="article-cards__connections-anchor">Veja todas as notícias a respeito de <strong>Materiais de referência</strong></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<button class="article-cards__connections-toggler"><span class="visuallyhidden">ver ligações</span><svg class="icon icon-rotate" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-rotate"></use></svg></button>
+	</article>
+
+	<article class="article-cards__card article-cards__card--small article-cards__card--news col-3-12">
+		<div class="article-cards__holder">
+			<div class="article-cards__content article-cards__content--front">
+				<div class="article-cards__article">
+					<div class="article-cards__content-wrapper">
+						<a href="category/" class="article-cards__category">Privacidade</a>
+						<header class="article-cards__header">
+							<a href="articles/"><h3 class="article-cards__title">Uso e Reuso de Dados Abertos: a parte que entra em contato com o ser humano</h3></a>
+							<span class="article-cards__date">Por <a href="author/">Larissa Brainer</a> no <a href="category/" class="article-cards__site">Open Knowledge Brasil</a></span>
+						</header>
+						<a href="articles/">
+							<p class="article-cards__excerpt">A cidade de São Carlos (SP) recebe uma mesa redonda sobre dados abertos.</p>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="article-cards__content article-cards__content--back">
+				<ul class="article-cards__connections-list">
+					<li class="article-cards__connections-item">
+						<a href="category/" class="article-cards__connections-anchor">Veja todas as notícias a respeito de <strong>Materiais de referência</strong></a>
+					</li>
+					<li class="article-cards__connections-item">
+						<a href="author/" class="article-cards__connections-anchor">Veja todas as notícias por <strong>Larissa Brainer</strong></a>
+					</li>
+					<li class="article-cards__connections-item">
+						<a href="category/" class="article-cards__connections-anchor">Veja todas as notícias a respeito de <strong>Open Knowledge</strong></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<button class="article-cards__connections-toggler"><span class="visuallyhidden">ver ligações</span><svg class="icon icon-rotate" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-rotate"></use></svg></button>
+	</article>
+
+</div>
+<!-- END SECOND COLUMN -->
+
+<!--END FIRST ROW -->
+		<!--LAST ROW -->
+
+<!--FIRST COLUMN -->
+<div class="col-3-12">
+	<article class="article-cards__card article-cards__card--news article-cards__card--small col-3-12">
+		<div class="article-cards__holder">
+			<div class="article-cards__content article-cards__content--front">
+				<div class="article-cards__article">
+					<div class="article-cards__content-wrapper">
+						<a href="category/" class="article-cards__category">Dados abertos</a>
+						<header class="article-cards__header">
+							<a href="articles/"><h3 class="article-cards__title">Comunidade – A resposta para inovação?</h3></a>
+							<span class="article-cards__date">Por <a href="author/">Larissa Brainer</a> no <a href="category/" class="article-cards__site">Open Knowledge Brasil</a></span>
+						</header>
+						<a href="articles/">
+							<p class="article-cards__excerpt">Para marcar o Dia Internacional de Dados Abertos, a cidade de São Carlos (SP) recebe uma mesa redonda sobre o assunto, no próximo sábado (21), a partir das 9h.</p>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="article-cards__content article-cards__content--back">
+				<ul class="article-cards__connections-list">
+					<li class="article-cards__connections-item">
+						<a href="category/" class="article-cards__connections-anchor">Veja todas as notícias a respeito de <strong>Dados Abertos</strong></a>
+					</li>
+					<li class="article-cards__connections-item">
+						<a href="author/" class="article-cards__connections-anchor">Veja todas as notícias por <strong>Larissa Brainer da Silva Souza</strong></a>
+					</li>
+					<li class="article-cards__connections-item">
+						<a href="category/" class="article-cards__connections-anchor">Veja todas as publicadas no <strong>Open Knowledge Brasil</strong></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<button class="article-cards__connections-toggler"><span class="visuallyhidden">ver ligações</span><svg class="icon icon-rotate" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-rotate"></use></svg></button>
+	</article>
+
+	<article class="col-3-12 article-cards__colaborate article-cards__colaborate--news article-cards__card--small">
+		<a href="#" class="article-cards__colaborate-anchor">
+			<svg class="article-cards__icon-plus icon icon-plus" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-plus"></use></svg>
+			<h3 class="article-cards__colaborate-text">Envie uma noticia</h3>
+		</a>
+	</article>
+
+</div>
+<!--END FIRST COLUMN -->
+
+<!-- SECOND COLUMN -->
+<div class="col-3-12">
+
+	<article class="article-cards__card col-3-12">
+		<div class="article-cards__holder">
+			<div class="article-cards__content article-cards__content--front">
+				<div class="article-cards__article">
+					<a href="articles/">
+						<img class="article-cards__thumb" src="img/examples/card-image-2.jpg" alt="alt da imagem" />
+					</a>
+					<div class="article-cards__content-wrapper">
+						<a href="category/" class="article-cards__category">Sociedade</a>
+						<header class="article-cards__header">
+							<a href="articles/"><h3 class="article-cards__title">Cuidando do meu bairro</h3></a>
+							<span class="article-cards__date">05 de novembro de 2012</span>
+						</header>
+						<a href="articles/">
+							<p class="article-cards__excerpt">O orçamento público deve expressar o plano das ações para atender às necessidades da população.</p>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="article-cards__content article-cards__content--back">
+				<ul class="article-cards__connections-list">
+					<li class="article-cards__connections-item">
+						<a href="category/" class="article-cards__connections-anchor">Veja todas as notícias a respeito de <strong>Sociedade</strong></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<button class="article-cards__connections-toggler"><span class="visuallyhidden">ver ligações</span><svg class="icon icon-rotate" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-rotate"></use></svg></button>
+	</article>
+
+</div>
+<!-- END SECOND COLUMN -->
+
+<!-- THIRD COLUMN -->
+<div class="col-6-12">
+
+	<article class="article-cards__card col-6-12">
+		<div class="article-cards__holder">
+			<div class="article-cards__content article-cards__content--front">
+				<div class="article-cards__article">
+					<a href="articles/">
+						<img class="article-cards__thumb" src="img/examples/card-image-wide.jpg" alt="alt da imagem" />
+					</a>
+					<div class="article-cards__content-wrapper">
+						<a href="category/" class="article-cards__category">RDF</a>
+						<header class="article-cards__header">
+							<a href="articles/"><h3 class="article-cards__title">Biblioteca do Congresso Nacional do Chile</h3></a>
+							<span class="article-cards__date">05 de novembro de 2012</span>
+						</header>
+						<a href="articles/">
+							<p class="article-cards__excerpt">A Biblioteca do Congresso Nacional do Chile (BCN) é a primeira instituição estatal da América Latina que recebeu, da Fundação CTIC, as 5 estrelas dos Dados Linkados. </p>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="article-cards__content article-cards__content--back">
+				<ul class="article-cards__connections-list">
+					<li class="article-cards__connections-item">
+						<a href="category/" class="article-cards__connections-anchor">Veja todas as notícias a respeito de <strong>RDF</strong></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<button class="article-cards__connections-toggler"><span class="visuallyhidden">ver ligações</span><svg class="icon icon-rotate" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-rotate"></use></svg></button>
+	</article>
+
+</div>
+<!-- END THIRD COLUMN -->
+
+<!--END LAST ROW -->
+		
+	</div>
+	<a href="news/" class="anchor-button">Leia todas as notícias</a>
+</section>
+<!-- END LATEST NEWS -->
+    </div>
+    <div class="section section--2">
+        <!-- IMPORTANT CONCEPTS -->
+<section class="important-concepts-wrapper content">
+	<div class="center-elements">
+		<h2 class="title title--type-2 title--centered">Conceitos importantes</h2>
+	</div>
+	<ul class="important-concepts-list">
+		<li class="important-concepts-list__item col-3-12">
+			<a href="#" class="important-concepts-list__anchor">
+				<img class="important-concepts-list__thumb" src="img/examples/example-concept.jpg" alt="alt da imagem" />
+				<span class="important-concepts-list__thumb">Glossário de dados abertos</span>
+			</a>
+		</li>
+		<li class="important-concepts-list__item col-3-12">
+			<a href="#" class="important-concepts-list__anchor">
+				<img class="important-concepts-list__thumb" src="img/examples/example-concept.jpg" alt="alt da imagem" />
+				<span class="important-concepts-list__thumb">Glossário de dados abertos</span>
+			</a>
+		</li>
+		<li class="important-concepts-list__item col-3-12">
+			<a href="#" class="important-concepts-list__anchor">
+				<img class="important-concepts-list__thumb" src="img/examples/example-concept.jpg" alt="alt da imagem" />
+				<span class="important-concepts-list__thumb">Glossário de dados abertos</span>
+			</a>
+		</li>
+		<li class="important-concepts-list__item col-3-12">
+			<a href="#" class="important-concepts-list__anchor">
+				<img class="important-concepts-list__thumb" src="img/examples/example-concept.jpg" alt="alt da imagem" />
+				<span class="important-concepts-list__thumb">Glossário de dados abertos</span>
+			</a>
+		</li>
+		<li class="important-concepts-list__item col-3-12">
+			<a href="#" class="important-concepts-list__anchor">
+				<img class="important-concepts-list__thumb" src="img/examples/example-concept.jpg" alt="alt da imagem" />
+				<span class="important-concepts-list__thumb">Glossário de dados abertos</span>
+			</a>
+		</li>
+		<li class="important-concepts-list__item col-3-12">
+			<a href="#" class="important-concepts-list__anchor">
+				<img class="important-concepts-list__thumb" src="img/examples/example-concept.jpg" alt="alt da imagem" />
+				<span class="important-concepts-list__thumb">Glossário de dados abertos</span>
+			</a>
+		</li>
+		<li class="important-concepts-list__item col-3-12">
+			<a href="#" class="important-concepts-list__anchor">
+				<img class="important-concepts-list__thumb" src="img/examples/example-concept.jpg" alt="alt da imagem" />
+				<span class="important-concepts-list__thumb">Glossário de dados abertos</span>
+			</a>
+		</li>
+	</ul>
+</section>
+<!-- END IMPORTANT CONCEPTS -->
+    </div>
+    <!-- BE PART -->
+<section>
+	<div class="section be-part-wrapper">
+		<div class="content">
+			<div class="center-elements be-part-header">
+				<h2 class="be-part-header__title">Faça parte dessa rede!</h2>
+				<div class="center-all">
+					<p class="col-8-12 be-part-header__description">A Open Data for Development Network lorem ipsum dolor sit amet anno domini die vero. Você pode colaborar de três maneiras:</p>
+				</div>
+			</div>
+			<ul class="be-part-list">
+				<li class="be-part-list__item col-4-12">
+					<div class="be-part-list__thumb-wrapper">
+						<picture>
+						  	<source media="(max-width: 767px)" srcset="img/be-part/mobile/be-part--send-small.svg">
+							<img class="be-part-list__thumb" src="img/be-part/be-part--send.svg" alt="">
+						</picture>
+					</div>
+					<h3 class="be-part-list__title">Mande sua notícia</h3>
+					<p class="be-part-list__paragraph">Envie a sua notícia, publique-a dentro da plataforma OD4D e se torne um correspondente do nosso site.</p>
+					<a href="#" class="anchor-button anchor-button--type-b">Saiba como</a>
+				</li>
+				<li class="be-part-list__item col-4-12">
+					<div class="be-part-list__thumb-wrapper">
+						<picture>
+							<source media="(max-width: 767px)" srcset="img/be-part/mobile/be-part--share-small.svg">
+							<img class="be-part-list__thumb" src="img/be-part/be-part--share.svg" alt="" />
+						</picture>
+					</div>
+					<h3 class="be-part-list__title">Que tal abrir os seus dados?</h3>
+					<p class="be-part-list__paragraph">Você tem um site que fale sobre dados abertos? Saiba como participar dessa comunidade via RSS.</p>
+					<a href="#" class="anchor-button anchor-button--type-b">Entenda melhor</a>
+				</li>
+				<li class="be-part-list__item col-4-12">
+					<div class="be-part-list__thumb-wrapper">
+						<picture>
+							<source media="(max-width: 767px)" srcset="img/be-part/mobile/be-part--develop-small.svg">
+							<img class="be-part-list__thumb" src="img/be-part/be-part--develop.svg" alt="" />
+						</picture>
+					</div>
+					<h3 class="be-part-list__title">Ajude a desenvolver a plataforma</h3>
+					<p class="be-part-list__paragraph">É desenvolvedor e se interessa por lorem ipsum dolor sit amet? Consectetur adipiscing elit, sed do eiusmod.</p>
+					<a href="#" class="anchor-button anchor-button--type-b">Acesse o Github</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="be-part-wrapper--bottom section center-elements">
+		<p class="be-part-guide"><a href="#"><strong class="text--uppercase">Não entendeu nada?</strong> Confira nosso roteiro explicativo dos conceitos de dados abertos</a></p>
+	</div>
+</section>
+<!-- END BE PART -->
+    <div class="section section--3">
+        <div class="content">
+            <!-- ARTICLES -->
+<section class="articles-wrapper">
+	<h2 class="title">Artigos</h2>
+	<div class="row article-cards__list" data-columns>
+		<article class="article-cards__card article-cards__card--fluid">
+			<div class="article-cards__holder">
+				<div class="article-cards__content article-cards__content--front">
+					<div class="article-cards__article">
+						<div class="article-cards__content-wrapper">
+							<a href="category/" class="article-cards__category">Governo</a>
+							<header class="article-cards__header">
+								<a href="articles/"><h3 class="article-cards__title">Portal Brasileiro de Dados Abertos</h3></a>
+								<span class="article-cards__date">Por <a href="author/">Jorge Machado</a></span>
+							</header>
+							<a href="articles/">
+								<p class="article-cards__excerpt">O orçamento público deve expressar o planejamento das ações para atender às necessidades e prioridades da população.</p>
+							</a>
+							<a class="article-cards__read-more" href="articles/">Leia mais <span class="visuallyhidden">sobre Portal Brasileiro de Dados Abertos</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+		<article class="article-cards__card article-cards__card--fluid">
+			<div class="article-cards__holder">
+				<div class="article-cards__content article-cards__content--front">
+					<div class="article-cards__article">
+						<a href="articles/">
+							<img class="article-cards__thumb" src="img/examples/card-image-article.jpg" alt="alt da imagem" />
+						</a>
+						<div class="article-cards__content-wrapper">
+							<a href="category/" class="article-cards__category">Terceiro Setor</a>
+							<header class="article-cards__header">
+								<a href="articles/"><h3 class="article-cards__title">Boas práticas com dados abertos: Sunlight Foundation</h3></a>
+								<span class="article-cards__date"><span class="visuallyhidden">English article</span><svg class="article-cards__icon-language icon icon-languages"><use xlink:href="img/icons/icons.svg#icon-language--en-us"></use></svg>Por <a href="author/">Iris Palma</a></span>
+							</header>
+							<a href="articles/">
+								<p class="article-cards__excerpt">It is likely that the rise of open data as a mechanism for public transparency, cooperation and innovation has not yet reached its peak , especially in countries where public administration are still in a process of intensive incorporate technologies in relations with citizenship.</p>
+							</a>
+							<a class="article-cards__read-more" href="articles/">read more <span class="visuallyhidden">Boas práticas com dados abertos: Sunlight Foundation</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+		<article class="article-cards__card article-cards__card--fluid">
+			<div class="article-cards__holder">
+				<div class="article-cards__content article-cards__content--front">
+					<div class="article-cards__article">
+						<a href="articles/">
+							<img class="article-cards__thumb" src="img/examples/card-image-article-2.jpg" alt="alt da imagem" />
+						</a>
+						<div class="article-cards__content-wrapper">
+							<a href="category/" class="article-cards__category">Educação</a>
+							<header class="article-cards__header">
+								<a href="articles/"><h3 class="article-cards__title">ENDA: Educação em Dados Abertos</h3></a>
+								<span class="article-cards__date">Por <a href="author/">Everton 137</a></span>
+							</header>
+							<a href="articles/">
+								<p class="article-cards__excerpt">Na Trilha Educação em Dados Abertos do Encontro Nacional de Dados Abertos, contamos com a participação de dois membros da sociedade civil, Gustavo Paiva, da Ação Educativa, e Ernesto Faria, da Fundação Lemman, e dois membros do governo, Eduardo Cheng, do Ministério da Educação, e Alexandre Santos, do Inep.</p>
+							</a>
+							<a class="article-cards__read-more" href="articles/">Leia mais <span class="visuallyhidden">ENDA: Educação em Dados Abertos</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+		<article class="article-cards__card article-cards__card--fluid">
+			<div class="article-cards__holder">
+				<div class="article-cards__content article-cards__content--front">
+					<div class="article-cards__article">
+						<div class="article-cards__content-wrapper">
+							<a href="category/" class="article-cards__category">Serviços</a>
+							<header class="article-cards__header">
+								<a href="articles/"><h3 class="article-cards__title">Open 311</h3></a>
+								<span class="article-cards__date">Por <a href="author/">Danielle Pereira</a></span>
+							</header>
+							<a href="articles/">
+								<p class="article-cards__excerpt">Open 311 proporciona canais abertos de comunicação sobre espaços e serviços públicos. Com um dispositivo móvel ou um computador, qualquer pessoa pode enviar informação (idealmente uma foto) sobre um problema em determinado lugar. Esses relatos têm sido de grande relevância para as autoridades.</p>
+							</a>
+							<a class="article-cards__read-more" href="articles/">Leia mais <span class="visuallyhidden">sobre Open 311</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+		<article class="article-cards__card article-cards__card--fluid">
+			<div class="article-cards__holder">
+				<div class="article-cards__content article-cards__content--front">
+					<div class="article-cards__article">
+						<div class="article-cards__content-wrapper">
+							<a href="category/" class="article-cards__category">Privacidade</a>
+							<header class="article-cards__header">
+								<a href="articles/"><h3 class="article-cards__title">Privacidade é tema de debate no 2º ENDA</h3></a>
+								<span class="article-cards__date">Por <a href="author/">Victor Pimenta</a></span>
+							</header>
+							<a href="articles/">
+								<p class="article-cards__excerpt">A trilha sobre Privacidade no 2º Encontro Nacional de Dados Abertos (ENDA) levantou várias discussões pertinentes à aparente dicotomia entre transparência e sigilo, tratando do tema dos dados abertos e suas implicações para a privacidade e a proteção de dados pessoais ao dar publicidade a informações em formato manipulável e desagregado.</p>
+							</a>
+							<a class="article-cards__read-more" href="articles/">Leia mais <span class="visuallyhidden">sobre Privacidade é tema de debate no 2º ENDA</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+		<article class="article-cards__colaborate article-cards__colaborate--articles article-cards__card--small">
+			<a href="#" class="article-cards__colaborate-anchor">
+				<svg class="article-cards__icon-plus icon icon-plus" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-plus"></use></svg>
+				<h3 class="article-cards__colaborate-text">Envie um artigo</h3>
+			</a>
+		</article>
+	</div>
+	<a href="news/" class="anchor-button">Leia todas as notícias</a>
+</section>
+<!-- END ARTICLES -->
+            <hr class="divider" />
+            <!-- VIDEOS -->
+<section class="videos-wrapper">
+	<h2 class="title">Últimos Vídeos</h2>
+	<ul class="videos-list">
+		<li class="videos-list__item col-6-12">
+			<a class="videos-list__thumb-anchor" href="https://www.youtube.com/watch?v=6LJBNabpr6I">
+				<img class="videos-list__thumb" src="img/examples/video-image-1.jpg" alt="alt da imagem">
+				<svg class="videos-list__thumb-icon icon icon-play" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-play"></use></svg>
+			</a>
+			<div class="videos-list__info">
+				<div class="videos-list__date-wrapper col-1-12">
+					<span class="videos-list__date">08<span class="videos-list__date--month">nov</span></span>
+				</div>
+				<div class="col-5-12 videos-list__description last">
+					<a href="https://www.youtube.com/watch?v=6LJBNabpr6I">
+						<h3 class="videos-list__title">Entrevista com Marina Atoji sobre Jornalismo de Dados</h3>
+						<p class="videos-list__excerpt">A jornalista Marina Atoji, que trabalha na Associa Brasileira de Jornalismo Investigativo fala um pouco sobre a conversa entre programadores e jornalistas.</p>
+					</a>
+				</div>
+			</div>
+		</li>
+		<li class="videos-list__item col-6-12">
+			<a class="videos-list__thumb-anchor" href="https://www.youtube.com/watch?v=QvC7myf4jmM">
+				<img class="videos-list__thumb" src="img/examples/video-image-2.jpg" alt="alt da imagem">
+				<svg class="videos-list__thumb-icon icon icon-play" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-play"></use></svg>
+			</a>
+			<div class="videos-list__about">
+				<div class="videos-list__date-wrapper col-1-12">
+					<span class="videos-list__date">10<span class="videos-list__date--month">out</span></span>
+				</div>
+				<div class="col-5-12 videos-list__description last">
+					<a href="https://www.youtube.com/watch?v=QvC7myf4jmM">
+						<h3 class="videos-list__title">Entrevista com Marina Atoji sobre Jornalismo de Dados</h3>
+						<p class="videos-list__excerpt">A jornalista Marina Atoji, que trabalha na Associa Brasileira de Jornalismo Investigativo fala um pouco sobre a conversa entre programadores e jornalistas.</p>
+					</a>
+				</div>
+			</div>
+		</li>
+	</ul>
+	<div class="center-elements--mobile">
+		<a href="https://www.youtube.com/user/OpenData4Development/" class="anchor-button">Veja todos os vídeos no nosso canal</a>
+	</div>
+</section>
+<!-- END VIDEOS -->
+            
+        </div>
+    </div>
+    <div class="section section--4">
+        <div class="content">
+            <!-- SOCIAL NETWORKS -->
+<section class="social-networks-wrapper">
+	<div class="center-elements">
+		<h2 class="title title--type-2 title--color-1 title--centered">Nas redes sociais</h2>
+	</div>
+	<div class="col-4-12">
+		<!-- FACEBOOK -->
+<section class="facebook-like-container">
+	<h3 class="visuallyhidden">Facebook</h3>
+	<div id="js-facebook-like-box" class="facebook-like-box">&nbsp;</div>
+</section>
+<!-- END FACEBOOK -->
+		<!-- SOCIAL NETWORKS LIST -->
+<section class="social-networks-list__container">
+	<h3 class="social-networks-list__title">Siga o OD4D nas redes sociais:</h3>
+	<ul class="social-networks-list">
+		<li class="social-networks-list__item">
+			<a class="social-networks-list__anchor" href="https://github.com/W3CBrasil/od4d-front">
+				<span class="visuallyhidden">github</span>
+				<svg class="icon social-networks-list__icon icon-social-networks--github" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-github"></use></svg>
+			</a>
+		</li>
+		<li class="social-networks-list__item">
+			<a class="social-networks-list__anchor" href="https://twitter.com/od4_d">
+				<span class="visuallyhidden">twitter</span>
+				<svg class="icon social-networks-list__icon icon-social-networks--twitter" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-twitter"></use></svg>
+			</a>
+		</li>
+		<li class="social-networks-list__item">
+			<a class="social-networks-list__anchor" href="https://www.youtube.com/user/OpenData4Development/">
+				<span class="visuallyhidden">youtube</span>
+				<svg class="icon social-networks-list__icon icon-social-networks--youtube" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-youtube"></use></svg>
+			</a>
+		</li>
+		<li class="social-networks-list__item">
+			<a class="social-networks-list__anchor" href="https://www.facebook.com/opendata4dev/">
+				<span class="visuallyhidden">facebook</span>
+				<svg class="icon social-networks-list__icon icon-social-networks--facebook" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-facebook"></use></svg>
+			</a>
+		</li>
+		<li class="social-networks-list__item">
+			<a class="social-networks-list__anchor" href="https://br.pinterest.com/yasodara/web-dos-dados/">
+				<span class="visuallyhidden">Acesse o pinterest</span>
+				<svg class="icon social-networks-list__icon icon-social-networks--pinterest" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-pinterest"></use></svg>
+			</a>
+		</li>
+	</ul>
+</section>
+<!-- END SOCIAL NETWORKS LIST -->
+	</div>
+	<div class="col-4-12">
+		<!-- TWITTER LIST -->
+<section class="twitter-list-container">
+	<h3 class="visuallyhidden">Twitter</h3>
+	<div class="twitter-list" id="js-twitter-list">&nbsp;</div>
+	<a href="https://twitter.com/od4_d" class="anchor-button anchor-button--type-c">Siga-nos no twitter</a>
+</section>
+<!-- END TWITTER LIST -->
+	</div>
+	<div class="col-4-12">
+		<!-- PINTEREST -->
+<section>
+	<h3 class="visuallyhidden">Pinterest</h3>
+	<div id="js-pinterest-board" class="pinterest-board">
+		<a data-pin-board-width="272" data-pin-do="embedBoard" data-pin-scale-height="200" data-pin-scale-width="80" href="https://www.pinterest.com/yasodara/web-dos-dados/"><span class="visuallyhidden">Pinterest</span></a>
+	</div>
+</section>
+<!-- END PINTEREST -->
+	</div>
+</section>
+<!-- END SOCIAL NETWORKS -->
+        </div>
+    </div>
+    <div class="section section--5">
+        <div class="content">
+            <!-- UNDERSTAND BETTER -->
+<section class="understand-better-container">
+	<h2 class="title title--color-2">Entenda melhor</h2>
+	<div class="row">
+		<div class="col-5-12 understand-better__video-container">
+			<a class="videos-list__thumb-anchor" href="https://www.youtube.com/watch?v=T6_AsumMFm4">
+				<img class="videos-list__thumb" src="img/examples/video-image-3.jpg" alt="alt da imagem">
+				<svg class="videos-list__thumb-icon icon icon-play" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-play"></use></svg>
+			</a>
+		</div>
+		<div class="col-7-12">
+			<picture class="understand-better__logo-wrapper">
+				<source media="(max-width: 767px)" srcset="img/logos/small/free-internet--pt-br-small.svg">
+				<source media="(max-width: 979px)" srcset="img/logos/medium/free-internet--pt-br-medium.svg">
+				<img class="understand-better__logo" src="img/logos/free-internet--pt-br.svg" alt="Eu defendo a internet livre!" />
+			</picture>
+			<div class="understand-better-share-container">
+				<h3 class="understand-better-share__title">Compartilhe essa idéia nas redes sociais:</h3>
+				<ul class="understand-better-share">
+					<li class="understand-better-share__item">
+						<a href="#" class="understand-better-share__anchor">
+							<svg class="icon icon-social-networks-share" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-social-twitter"></use></svg>
+						</a>
+					</li>
+					<li class="understand-better-share__item">
+						<a href="#" class="understand-better-share__anchor">
+							<svg class="icon icon-social-networks-share" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-social-facebook"></use></svg>
+						</a>
+					</li>
+					<li class="understand-better-share__item">
+						<a href="#" class="understand-better-share__anchor">
+							<svg class="icon icon-social-networks-share" aria-role="presentation"><use xlink:href="img/icons/icons.svg#icon-social-plus"></use></svg>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- END UNDERSTAND BETTER -->
+        </div>
+    </div>
+</main>
+<footer class="section section--6">
+    <div class="content">
+        <!-- HOME FOOTER -->
+<div class="home-footer-container">
+	<img src="img/logos/od4d-logo--footer.svg" alt="OD4D Network" aria-hidden="true" role="presentation" />
+	<ul class="footer-links-list flow-opposite">
+		<li class="footer-links-list__item">
+			<a href="#" class="footer-links-list__anchor text--bold">Confira nossos parceiros</a>
+		</li>
+		<li class="footer-links-list__item">
+			<a href="#" class="footer-links-list__anchor">Termos de uso</a>
+		</li>
+		<li class="footer-links-list__item">
+			<a href="#" class="footer-links-list__anchor">Política de Privacidade</a>
+		</li>
+		<li class="footer-links-list__item">
+			<a href="#" class="footer-links-list__anchor text--bold">
+				<svg class="footer-links-list__creative-commons-icon icon icon-creative-commons" aria-role="presentation" aria-hidden="true"><use  xlink:href="img/icons/icons.svg#icon-creative-commons"></use></svg>Creative Commons
+			</a>
+		</li>
+	</ul>
+</div>
+<!-- END HOME FOOTER -->
+    </div>
+</footer>
+  	
+    <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="href="js/lib/jquery-2.1.4.min.js"><\/script>')</script>
+    <script src="js/main.js"></script>
+
+  </body>
+
+</html>
